@@ -1,0 +1,16 @@
+Support-JSON synthetic Russian SaaS support datasets
+Copyright 2026 A11Sunday
+
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+License and complete legal text:
+https://creativecommons.org/licenses/by/4.0/
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution: A11Sunday, Support-JSON-RU, 2026.
+Dataset source: https://huggingface.co/datasets/A11Sunday/support-json-ru
+Indicate changes when sharing modified data. The dataset is provided as-is.
+Historical source metadata marked "not_assigned" describes the pre-publication
+snapshot. This notice grants the publication license for the authored datasets.
+
+Code and LoRA adapter: Apache-2.0, separately described in LICENSE.
+Base Qwen model and IBM Plex fonts retain their own notices.

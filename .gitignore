@@ -1,0 +1,17 @@
+.venv/
+.build/
+.codex-finalizer/
+.cache/
+__pycache__/
+*.egg-info/
+models/
+checkpoints/
+.soup/
+.env
+.env.*
+output/hairstyles/
+output/research/
+output/model/**/*.safetensors
+output/submission/*.zip
+output/submission/submission-manifest*.json
+reports/demo-server*.log

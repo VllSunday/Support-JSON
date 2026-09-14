@@ -1,0 +1,13 @@
+Support-JSON
+Copyright 2026 A11Sunday
+
+Authored source code and LoRA adapter: Apache License 2.0 (LICENSE).
+Authored synthetic datasets: CC BY 4.0 (LICENSE.dataset.txt).
+
+Base model: Qwen/Qwen3.5-4B, Apache License 2.0.
+Base notice retained in output/model/support-json-qwen3.5-4b-lora/LICENSE.base.txt.
+The release contains adapter weights; base weights are downloaded separately.
+
+IBM Plex font files: Copyright 2017 IBM Corp., SIL Open Font License 1.1.
+Font notice retained in web/assets/fonts/OFL.txt.
+The interface uses user-supplied Open Design layout and unmodified font files.
