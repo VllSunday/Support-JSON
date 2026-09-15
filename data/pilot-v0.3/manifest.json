@@ -1,0 +1,8 @@
+{
+  "n": 192,
+  "source": "pilot-v0.2/train.jsonl",
+  "source_fingerprint": "3e886db2a49633c058a3aac6ed069f6cec55e52bda5024765047f4437881098b",
+  "system_prompt_digest": "81523aea316c4e3d15b7a4f68ee37e0fc4f1a0adeea263c9471bf05ec3de3877",
+  "changes": "Explicit filled-output instruction only",
+  "test_targets_used": false
+}

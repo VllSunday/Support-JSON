@@ -1,0 +1,135 @@
+{
+  "total": 396,
+  "split_counts": {
+    "train": 192,
+    "validation": 96,
+    "test": 108
+  },
+  "split_distributions": {
+    "train": {
+      "category": {
+        "refund": 36,
+        "cancellation": 36,
+        "access": 12,
+        "technical": 12,
+        "billing": 48,
+        "product": 36,
+        "integration": 12
+      },
+      "priority": {
+        "medium": 75,
+        "high": 60,
+        "critical": 3,
+        "low": 54
+      },
+      "action": {
+        "propose_action": 45,
+        "answer": 24,
+        "ask_details": 36,
+        "escalate": 87
+      }
+    },
+    "validation": {
+      "category": {
+        "refund": 12,
+        "cancellation": 12,
+        "access": 12,
+        "integration": 12,
+        "technical": 12,
+        "billing": 24,
+        "product": 12
+      },
+      "priority": {
+        "medium": 39,
+        "high": 36,
+        "critical": 3,
+        "low": 18
+      },
+      "action": {
+        "propose_action": 21,
+        "answer": 9,
+        "ask_details": 15,
+        "escalate": 51
+      }
+    },
+    "test": {
+      "category": {
+        "refund": 24,
+        "cancellation": 12,
+        "access": 12,
+        "technical": 12,
+        "billing": 24,
+        "product": 12,
+        "integration": 12
+      },
+      "priority": {
+        "medium": 48,
+        "high": 39,
+        "critical": 3,
+        "low": 18
+      },
+      "action": {
+        "propose_action": 24,
+        "answer": 15,
+        "ask_details": 18,
+        "escalate": 51
+      }
+    }
+  },
+  "category_counts": {
+    "refund": 72,
+    "cancellation": 60,
+    "access": 36,
+    "technical": 36,
+    "billing": 96,
+    "product": 60,
+    "integration": 36
+  },
+  "action_counts": {
+    "propose_action": 90,
+    "answer": 48,
+    "ask_details": 69,
+    "escalate": 189
+  },
+  "priority_counts": {
+    "medium": 162,
+    "high": 135,
+    "critical": 9,
+    "low": 90
+  },
+  "sentiment_counts": {
+    "positive": 132,
+    "neutral": 132,
+    "negative": 132
+  },
+  "state_counts": {
+    "true": 99,
+    "false": 99,
+    "unknown": 99,
+    "conflict": 99
+  },
+  "companies": {
+    "train": 3,
+    "validation": 1,
+    "test": 1
+  },
+  "families": {
+    "train": 8,
+    "validation": 8,
+    "test": 9
+  },
+  "cross_split_overlap": false,
+  "human_reviewed": 0,
+  "purpose": "engineering_pilot_not_final_training_data",
+  "candidate_count": 492,
+  "removed_cosmetic_duplicates": 96,
+  "files_sha256": {
+    "review_queue.jsonl": "b6712c95b07910183b5c8073f8bf2ec38c15f7d2309acc8a6d2a6023781283f3",
+    "test.chatml.jsonl": "9b28d9928edc4624effc8bd38504902c39c18ac2c10403b94fe7288f5d145a3f",
+    "test.jsonl": "dd7f6eb443ef0e4c6eea4d5432b384fad1ba124561dad00c696ecfc9d9eb1109",
+    "train.chatml.jsonl": "04f722b67ac621d1118ee14fb6fe5d34e801cd4191306207f85659d28eabaeac",
+    "train.jsonl": "79f193ab4d7e31447b6a876d06ca922163c508bf33d9649373be288087ac7f6b",
+    "validation.chatml.jsonl": "0283294c1a3434cb68a58e03b77d3edac2c79e463b9f05543bf8874ec2e50f5a",
+    "validation.jsonl": "cfa1979d776702fa238d471d935173127953c0b3229e0e5c457e6a2acf38d8d9"
+  }
+}

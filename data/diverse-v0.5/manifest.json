@@ -1,0 +1,131 @@
+{
+  "total": 716,
+  "split_counts": {
+    "train": 512,
+    "validation": 96,
+    "test": 108
+  },
+  "split_distributions": {
+    "train": {
+      "category": {
+        "refund": 72,
+        "cancellation": 84,
+        "access": 48,
+        "technical": 48,
+        "billing": 132,
+        "product": 72,
+        "integration": 56
+      },
+      "priority": {
+        "medium": 139,
+        "high": 220,
+        "critical": 12,
+        "low": 141
+      },
+      "action": {
+        "propose_action": 113,
+        "answer": 66,
+        "ask_details": 75,
+        "escalate": 258
+      }
+    },
+    "validation": {
+      "category": {
+        "refund": 12,
+        "cancellation": 12,
+        "access": 12,
+        "integration": 12,
+        "technical": 12,
+        "billing": 24,
+        "product": 12
+      },
+      "priority": {
+        "medium": 39,
+        "high": 36,
+        "critical": 3,
+        "low": 18
+      },
+      "action": {
+        "propose_action": 21,
+        "answer": 9,
+        "ask_details": 15,
+        "escalate": 51
+      }
+    },
+    "test": {
+      "category": {
+        "refund": 24,
+        "cancellation": 12,
+        "access": 12,
+        "technical": 12,
+        "billing": 24,
+        "product": 12,
+        "integration": 12
+      },
+      "priority": {
+        "medium": 48,
+        "high": 39,
+        "critical": 3,
+        "low": 18
+      },
+      "action": {
+        "propose_action": 24,
+        "answer": 15,
+        "ask_details": 18,
+        "escalate": 51
+      }
+    }
+  },
+  "category_counts": {
+    "refund": 108,
+    "cancellation": 108,
+    "access": 72,
+    "technical": 72,
+    "billing": 180,
+    "product": 96,
+    "integration": 80
+  },
+  "action_counts": {
+    "propose_action": 158,
+    "answer": 90,
+    "ask_details": 108,
+    "escalate": 360
+  },
+  "priority_counts": {
+    "medium": 226,
+    "high": 295,
+    "critical": 18,
+    "low": 177
+  },
+  "sentiment_counts": {
+    "positive": 238,
+    "neutral": 239,
+    "negative": 239
+  },
+  "state_counts": {
+    "true": 179,
+    "false": 180,
+    "unknown": 177,
+    "conflict": 180
+  },
+  "companies": {
+    "train": 35,
+    "validation": 1,
+    "test": 1
+  },
+  "families": {
+    "train": 16,
+    "validation": 8,
+    "test": 9
+  },
+  "cross_split_overlap": false,
+  "human_reviewed": 0,
+  "purpose": "validation_error_driven_domain_diversification",
+  "training_rows": 512,
+  "hypothesis": "Uniform verified-age condition in v0.4 encourages unnecessary escalation; restore different domain facts and source requirements.",
+  "test_used_for_training_design": false,
+  "files_sha256": {
+    "train.chatml.jsonl": "d753c34915f887dc06d33c81410ba20b14fb02e5fc3682d2b2f6841b51b1f225",
+    "train.jsonl": "4b936a30064a6079a9516fc2c2613e62f8cfac6c1414f25c48ce81686ddbb6f4"
+  }
+}
