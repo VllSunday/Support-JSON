@@ -1,0 +1,48 @@
+{
+  "n": 108,
+  "dataset_fingerprint": "8170f1c034d1cf07a18e676e8b00cb4397104d748a967f7de29e3c26b9121529",
+  "few_shot_manifest": {
+    "source": "data/pilot-v0.2/train.jsonl",
+    "source_ids": [
+      "279d45c7cd8bbb96f7e0",
+      "66a51dc0615438679e52",
+      "7858d6ceec8f2a7ab4d9",
+      "f9a048ee6a3e0b18c765"
+    ],
+    "fingerprint": "77aa27f0408c9fd266d969549563a96a2d8f1ed1d2db566ba5125ce8e710c66b",
+    "n": 4,
+    "frozen_before_test": true,
+    "note": "Single predefined control prompt; no tuning on test results."
+  },
+  "field_only_accuracy": {
+    "category": 1.0,
+    "priority": 0.7777777777777778,
+    "sentiment": 0.9629629629629629,
+    "action": 0.4074074074074074,
+    "recommended_action": 0.4351851851851852,
+    "human_escalation": 0.6111111111111112
+  },
+  "strict_accuracy": {
+    "category": 0.7685185185185185,
+    "priority": 0.5925925925925926,
+    "sentiment": 0.75,
+    "action": 0.4074074074074074,
+    "recommended_action": 0.4074074074074074,
+    "human_escalation": 0.5
+  },
+  "schema_and_invariants_rate": 0.7685185185185185,
+  "critical_recall": {
+    "value": 1.0,
+    "correct": 3,
+    "total": 3
+  },
+  "latency": {
+    "batch_size": 4,
+    "median_batch_seconds": 29.514,
+    "median_amortized_seconds": 7.3785,
+    "mean_input_tokens": 2255.972222222222
+  },
+  "prompt_fingerprint": "ecfe057212c12d6487397242b391b914c0953f178d33a812ad942e590d6c48bd",
+  "memory_policy": "Release unused CUDA cache after each batch; partial batch-8 attempt archived due GPU contention with a game. Same examples and generation policy; no quality-driven prompt/selection changes. Primary test base/LoRA both used batch 8; this additional control uses a smaller batch.",
+  "note": "Additional control on same test with four predefined train examples. Different prompt from primary base/LoRA comparison. No tuning or model selection from these test results; reply quality/hallucinations not separately reviewed for this control."
+}

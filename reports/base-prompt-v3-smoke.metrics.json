@@ -1,0 +1,54 @@
+{
+  "n": 4,
+  "received_predictions": 4,
+  "missing_predictions": 0,
+  "accuracy": {
+    "category": 0.25,
+    "priority": 0.25,
+    "sentiment": 0.25,
+    "action": 0.0,
+    "recommended_action": 0.0,
+    "human_escalation": 0.25
+  },
+  "json_parse_rate": 1.0,
+  "schema_and_invariants_rate": 0.25,
+  "missing_info_set_accuracy": 0.25,
+  "supported_rule_ids_set_accuracy": 0.25,
+  "macro_f1": {
+    "category": {
+      "value": 0.4,
+      "labels_present_in_gold": [
+        "refund"
+      ]
+    },
+    "priority": {
+      "value": 0.4,
+      "labels_present_in_gold": [
+        "medium"
+      ]
+    }
+  },
+  "critical_recall": {
+    "value": null,
+    "correct": 0,
+    "total": 0
+  },
+  "by_state": {
+    "false": {
+      "n": 1,
+      "action_accuracy": 0.0
+    },
+    "true": {
+      "n": 3,
+      "action_accuracy": 0.0
+    }
+  },
+  "human_evaluation": {
+    "reviewed": 0,
+    "coverage": 0.0,
+    "hallucination_rate": null,
+    "mean_response_quality_1_to_5": null
+  },
+  "dataset_fingerprint": "0d3723dcd2d1623c46da303b9da1ae27bc67acb6beee224b110a026a89fd3374",
+  "note": "Invalid or missing outputs fail all task fields. Human rates cover reviewed subset only; null means not measured. Reply exact match is not used."
+}

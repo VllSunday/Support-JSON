@@ -1,0 +1,67 @@
+W0917 22:43:09.561000 39132 Lib\site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/426 [00:00<00:54,  7.74it/s]
+Loading weights:   3%|▎         | 11/426 [00:00<00:07, 55.56it/s]
+Loading weights:   5%|▌         | 23/426 [00:00<00:05, 76.73it/s]
+Loading weights:   9%|▊         | 37/426 [00:00<00:04, 91.10it/s]
+Loading weights:  11%|█         | 47/426 [00:00<00:04, 88.13it/s]
+Loading weights:  14%|█▎        | 58/426 [00:00<00:04, 90.18it/s]
+Loading weights:  18%|█▊        | 76/426 [00:00<00:03, 106.54it/s]
+Loading weights:  21%|██        | 88/426 [00:00<00:03, 107.97it/s]
+Loading weights:  23%|██▎       | 99/426 [00:01<00:03, 96.08it/s] 
+Loading weights:  27%|██▋       | 113/426 [00:01<00:03, 101.65it/s]
+Loading weights:  30%|███       | 128/426 [00:01<00:02, 101.17it/s]
+Loading weights:  33%|███▎      | 142/426 [00:01<00:02, 108.34it/s]
+Loading weights:  36%|███▌      | 153/426 [00:01<00:03, 89.11it/s] 
+Loading weights:  39%|███▉      | 167/426 [00:01<00:02, 88.02it/s]
+Loading weights:  43%|████▎     | 182/426 [00:01<00:02, 97.18it/s]
+Loading weights:  45%|████▌     | 193/426 [00:02<00:02, 98.75it/s]
+Loading weights:  48%|████▊     | 204/426 [00:02<00:02, 75.09it/s]
+Loading weights:  51%|█████     | 217/426 [00:02<00:02, 86.19it/s]
+Loading weights:  53%|█████▎    | 227/426 [00:02<00:02, 80.58it/s]
+Loading weights:  55%|█████▌    | 236/426 [00:02<00:02, 72.48it/s]
+Loading weights:  58%|█████▊    | 248/426 [00:02<00:02, 71.41it/s]
+Loading weights:  60%|██████    | 256/426 [00:02<00:02, 70.95it/s]
+Loading weights:  64%|██████▍   | 272/426 [00:03<00:01, 89.49it/s]
+Loading weights:  66%|██████▌   | 282/426 [00:03<00:01, 83.68it/s]
+Loading weights:  68%|██████▊   | 291/426 [00:03<00:01, 73.59it/s]
+Loading weights:  71%|███████   | 302/426 [00:03<00:01, 79.04it/s]
+Loading weights:  73%|███████▎  | 311/426 [00:03<00:01, 69.00it/s]
+Loading weights:  77%|███████▋  | 326/426 [00:03<00:01, 70.63it/s]
+Loading weights:  80%|███████▉  | 340/426 [00:04<00:01, 77.66it/s]
+Loading weights:  83%|████████▎ | 354/426 [00:04<00:00, 81.83it/s]
+Loading weights:  85%|████████▌ | 363/426 [00:04<00:00, 71.83it/s]
+Loading weights:  89%|████████▉ | 379/426 [00:04<00:00, 75.85it/s]
+Loading weights:  92%|█████████▏| 393/426 [00:04<00:00, 76.82it/s]
+Loading weights:  96%|█████████▌| 408/426 [00:04<00:00, 78.84it/s]
+Loading weights:  98%|█████████▊| 416/426 [00:05<00:00, 76.42it/s]
+Loading weights: 100%|██████████| 426/426 [00:05<00:00, 83.58it/s]
+{"event": "loaded", "seconds": 10.508284299998195, "model_class": "PeftModelForCausalLM", "gpu": "NVIDIA GeForce RTX 5070 Ti", "allocated_gb": 7.954790115356445}
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+{"event": "batch", "done": 4, "total": 96, "seconds": 14.679, "batch_size": 4, "allocated_gb": 7.962817668914795}
+{"event": "batch", "done": 8, "total": 96, "seconds": 15.955, "batch_size": 4, "allocated_gb": 7.962818622589111}
+{"event": "batch", "done": 12, "total": 96, "seconds": 13.505, "batch_size": 4, "allocated_gb": 7.9628214836120605}
+{"event": "batch", "done": 16, "total": 96, "seconds": 11.893, "batch_size": 4, "allocated_gb": 7.962817668914795}
+{"event": "batch", "done": 20, "total": 96, "seconds": 12.385, "batch_size": 4, "allocated_gb": 7.962817668914795}
+{"event": "batch", "done": 24, "total": 96, "seconds": 14.339, "batch_size": 4, "allocated_gb": 7.962822437286377}
+{"event": "batch", "done": 28, "total": 96, "seconds": 12.719, "batch_size": 4, "allocated_gb": 7.962813854217529}
+{"event": "batch", "done": 32, "total": 96, "seconds": 13.153, "batch_size": 4, "allocated_gb": 7.962813854217529}
+{"event": "batch", "done": 36, "total": 96, "seconds": 13.365, "batch_size": 4, "allocated_gb": 7.962818145751953}
+{"event": "batch", "done": 40, "total": 96, "seconds": 16.388, "batch_size": 4, "allocated_gb": 7.962814807891846}
+{"event": "batch", "done": 44, "total": 96, "seconds": 12.896, "batch_size": 4, "allocated_gb": 7.962813854217529}
+{"event": "batch", "done": 48, "total": 96, "seconds": 14.325, "batch_size": 4, "allocated_gb": 7.962818622589111}
+{"event": "batch", "done": 52, "total": 96, "seconds": 11.67, "batch_size": 4, "allocated_gb": 7.962813377380371}
+{"event": "batch", "done": 56, "total": 96, "seconds": 12.435, "batch_size": 4, "allocated_gb": 7.962813854217529}
+{"event": "batch", "done": 60, "total": 96, "seconds": 12.736, "batch_size": 4, "allocated_gb": 7.962818145751953}
+{"event": "batch", "done": 64, "total": 96, "seconds": 10.736, "batch_size": 4, "allocated_gb": 7.962813377380371}
+{"event": "batch", "done": 68, "total": 96, "seconds": 10.908, "batch_size": 4, "allocated_gb": 7.962813377380371}
+{"event": "batch", "done": 72, "total": 96, "seconds": 12.333, "batch_size": 4, "allocated_gb": 7.962818145751953}
+{"event": "batch", "done": 76, "total": 96, "seconds": 11.691, "batch_size": 4, "allocated_gb": 7.962813377380371}
+{"event": "batch", "done": 80, "total": 96, "seconds": 12.553, "batch_size": 4, "allocated_gb": 7.962813377380371}
+{"event": "batch", "done": 84, "total": 96, "seconds": 11.937, "batch_size": 4, "allocated_gb": 7.962817668914795}
+{"event": "batch", "done": 88, "total": 96, "seconds": 11.447, "batch_size": 4, "allocated_gb": 7.962813377380371}
+{"event": "batch", "done": 92, "total": 96, "seconds": 11.855, "batch_size": 4, "allocated_gb": 7.962813377380371}
+{"event": "batch", "done": 96, "total": 96, "seconds": 10.86, "batch_size": 4, "allocated_gb": 7.962817668914795}
+{"n": 96, "received_predictions": 96, "missing_predictions": 0, "accuracy": {"category": 0.8020833333333334, "priority": 0.71875, "sentiment": 0.8958333333333334, "action": 0.59375, "recommended_action": 0.59375, "human_escalation": 0.65625}, "json_parse_rate": 1.0, "schema_and_invariants_rate": 0.8958333333333334, "missing_info_set_accuracy": 0.8125, "supported_rule_ids_set_accuracy": 0.7916666666666666, "macro_f1": {"category": {"value": 0.7969508752117448, "labels_present_in_gold": ["access", "billing", "cancellation", "integration", "product", "refund", "technical"]}, "priority": {"value": 0.5703550483181216, "labels_present_in_gold": ["critical", "high", "low", "medium"]}}, "critical_recall": {"value": 0.0, "correct": 0, "total": 3}, "by_state": {"conflict": {"n": 24, "action_accuracy": 0.5416666666666666}, "false": {"n": 24, "action_accuracy": 0.20833333333333334}, "true": {"n": 24, "action_accuracy": 0.7916666666666666}, "unknown": {"n": 24, "action_accuracy": 0.8333333333333334}}, "human_evaluation": {"reviewed": 0, "coverage": 0.0, "hallucination_rate": null, "mean_response_quality_1_to_5": null}, "dataset_fingerprint": "e3bc9e4b9fffd05cfa66779f890026b26726bf3d068e9d5ec3aec413fca258a4", "note": "Invalid or missing outputs fail all task fields. Human rates cover reviewed subset only; null means not measured. Reply exact match is not used."}

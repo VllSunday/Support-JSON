@@ -1,0 +1,11 @@
+waiting_for_main_workflow_exit
+running_base_four_shot_test
+failed
+Traceback (most recent call last):
+  File "C:\Users\zheny\OneDrive\Desktop\projects\finetune-capstone-project\scripts\run_few_shot_control.py", line 66, in <module>
+    if __name__=='__main__':
+            ^^^^^^
+  File "C:\Users\zheny\OneDrive\Desktop\projects\finetune-capstone-project\scripts\run_few_shot_control.py", line 46, in main
+    if result.returncode:
+        ^^^^^^^^^^^^^^^^^^
+RuntimeError: Few-shot inference failed

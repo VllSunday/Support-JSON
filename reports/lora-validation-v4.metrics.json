@@ -1,0 +1,80 @@
+{
+  "n": 96,
+  "received_predictions": 96,
+  "missing_predictions": 0,
+  "accuracy": {
+    "category": 0.9895833333333334,
+    "priority": 0.9583333333333334,
+    "sentiment": 0.9895833333333334,
+    "action": 0.7708333333333334,
+    "recommended_action": 0.7708333333333334,
+    "human_escalation": 0.7708333333333334
+  },
+  "field_only_accuracy": {
+    "category": 1.0,
+    "priority": 0.96875,
+    "sentiment": 1.0,
+    "action": 0.78125,
+    "recommended_action": 0.78125,
+    "human_escalation": 0.78125
+  },
+  "json_parse_rate": 1.0,
+  "schema_and_invariants_rate": 0.9895833333333334,
+  "missing_info_set_accuracy": 0.875,
+  "supported_rule_ids_set_accuracy": 0.9791666666666666,
+  "macro_f1": {
+    "category": {
+      "value": 0.9937888198757764,
+      "labels_present_in_gold": [
+        "access",
+        "billing",
+        "cancellation",
+        "integration",
+        "product",
+        "refund",
+        "technical"
+      ]
+    },
+    "priority": {
+      "value": 0.9440117416829745,
+      "labels_present_in_gold": [
+        "critical",
+        "high",
+        "low",
+        "medium"
+      ]
+    }
+  },
+  "critical_recall": {
+    "value": 1.0,
+    "correct": 3,
+    "total": 3
+  },
+  "by_state": {
+    "conflict": {
+      "n": 24,
+      "action_accuracy": 1.0
+    },
+    "false": {
+      "n": 24,
+      "action_accuracy": 0.625
+    },
+    "true": {
+      "n": 24,
+      "action_accuracy": 0.75
+    },
+    "unknown": {
+      "n": 24,
+      "action_accuracy": 0.7083333333333334
+    }
+  },
+  "human_evaluation": {
+    "reviewed": 0,
+    "coverage": 0.0,
+    "hallucination_rate": null,
+    "mean_response_quality_1_to_5": null
+  },
+  "dataset_fingerprint": "e3bc9e4b9fffd05cfa66779f890026b26726bf3d068e9d5ec3aec413fca258a4",
+  "scoring_version": "0.4",
+  "note": "Strict accuracy: invalid or missing outputs fail all task fields. Field-only accuracy: each exact, correctly typed field is scored independently, even when other fields violate the contract. Human rates cover reviewed subset only; null means not measured. Reply exact match is not used."
+}

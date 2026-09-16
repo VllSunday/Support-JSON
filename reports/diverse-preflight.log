@@ -1,0 +1,2 @@
+[transformers] return_assistant_tokens_mask==True but chat template does not contain `{% generation %}` keyword.
+{"n": 512, "assistant_label_tokens_min": 92, "assistant_label_tokens_max": 117, "prompt_fully_masked": true, "all_assistant_answers_and_eos_present": true, "max_length": 2048, "backend": "transformers", "training_not_yet_run": true}

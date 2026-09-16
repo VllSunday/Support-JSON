@@ -1,0 +1,28 @@
+{
+  "method": "blinded paired AI-assisted rubric audit",
+  "reviewer": "Codex AI assistant",
+  "independent_human_review": false,
+  "n_pairs": 36,
+  "sample_fingerprint": "2de7488064d1d3be1e3798a142388acb30ae1af4129c0e54cce5ac75d57d7a26",
+  "ratings_fingerprint": "c9e21d4725534fa968ef7cf623653cb1488ca64d88ae3a54528e0025fef40ac1",
+  "models": {
+    "base": {
+      "reviewed": 36,
+      "assessable": 36,
+      "unassessable": 0,
+      "hallucination_count": 13,
+      "hallucination_rate": 0.3611111111111111,
+      "mean_response_quality": 2.7777777777777777
+    },
+    "lora": {
+      "reviewed": 36,
+      "assessable": 36,
+      "unassessable": 0,
+      "hallucination_count": 5,
+      "hallucination_rate": 0.1388888888888889,
+      "mean_response_quality": 4.305555555555555
+    }
+  },
+  "selection": "one random tone per scenario family/state, seed=914; labels A/B randomly ordered",
+  "note": "Qualitative rubric audit on a small synthetic suite. Not an independent human benchmark. Hallucination denominator excludes unusable reply; quality includes every selected output. No post-test model/prompt tuning."
+}

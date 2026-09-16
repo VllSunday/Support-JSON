@@ -1,0 +1,29 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "tokenizer_only": true,
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "thinking": false,
+  "limit": 4096,
+  "splits": {
+    "train": {
+      "n": 192,
+      "max_tokens": 999,
+      "mean_tokens": 945.4,
+      "over_4096": 0
+    },
+    "validation": {
+      "n": 96,
+      "max_tokens": 1033,
+      "mean_tokens": 952.0,
+      "over_4096": 0
+    },
+    "test": {
+      "n": 108,
+      "max_tokens": 1039,
+      "mean_tokens": 966.3,
+      "over_4096": 0
+    }
+  },
+  "chat_template_fingerprint": "12de9034d5269e8b1fe6012b3538374fcb3941bf93c95fc81b0cf5acf3f08ce4",
+  "note": "Checks full sequence length. Assistant loss masking and GPU memory still need runtime verification."
+}

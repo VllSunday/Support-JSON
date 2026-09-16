@@ -1,0 +1,8 @@
+waiting_for_main_workflow_exit
+failed
+Traceback (most recent call last):
+  File "C:\Users\zheny\OneDrive\Desktop\projects\finetune-capstone-project\scripts\run_few_shot_control.py", line 57, in <module>
+    main()
+  File "C:\Users\zheny\OneDrive\Desktop\projects\finetune-capstone-project\scripts\run_few_shot_control.py", line 25, in main
+    raise RuntimeError('Main workflow failed; control not started')
+RuntimeError: Main workflow failed; control not started

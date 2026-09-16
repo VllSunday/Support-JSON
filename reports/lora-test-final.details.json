@@ -1,0 +1,1309 @@
+[
+  {
+    "id": "a2462e29c24ba13ef6d3",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "c3629c4610e220195591",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "ae001f920a7287311407",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "1eecc461ebb91f88dcdc",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "911d47b602ee9cef5e0e",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "f16b597c72aabd5b1a9f",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "0fbaec35cee6375b7abe",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "b156ac3b4f3e769c3a81",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "49d3ec151d2e8c5207e0",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "d99b36c75cf3d10d295e",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "83262c5b42910c468a1a",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "b21f783ca10f44f854e2",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "54a112c1cb8242f0a51a",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "4a373306fdf31270746b",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "0ce3403196846677ff83",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "8da3a680bb4b56a5a9b3",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "eeee647b15bb6a42d494",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "4052f59bccdd39184a47",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "c567ba6e1e02b6a0ed4c",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "f1e413bf6b84ba6425ff",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "acdfcff8498784f933e2",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "ac73de217c9caebbf544",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "aa0ba60633f9e1be4847",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "36cffd1ff12f63103e1c",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "8ac11fc3956bf02cb1a3",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "a3952fbf181b960fb398",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "3c75cd4909723902eb7d",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "724d661b5cc17467796f",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "f704820196c0b4b6e12c",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "3a85d0783726dd02df30",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "3149303eeb7769c9bb97",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "413a4f92f3c30cbbe5fc",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "720a552b75f7eedc58be",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "f28dcb3a1fd9d12f5381",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "2efb9016557da4f18138",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "b878279618f174b5131a",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "702c9141738138e5a077",
+    "errors": [
+      "action and human_escalation disagree",
+      "propose_action requires a concrete proposed operation"
+    ],
+    "field_correct": {
+      "category": false,
+      "priority": false,
+      "sentiment": false,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "fd83e0e3709861f45b64",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "e122f9c9b9718c4fc332",
+    "errors": [
+      "action and human_escalation disagree"
+    ],
+    "field_correct": {
+      "category": false,
+      "priority": false,
+      "sentiment": false,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "66897fcbfa9c024a07ea",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "724a37218cea6a39e85e",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "48fcd373ffaff621ed53",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "5eb3eb01a81ff17db3ee",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "a1204c344c4e45e68a64",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "74050bd262e14b2971b5",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "f3ffeb32a961ed846ad8",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "b069b10957fdefb7fe61",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "e1b14d24ae9c266c9c3f",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "232f046804d0650d24d2",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "7647e7d5904cd62a4675",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "4c305ef8d4ab270b54f8",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "28b1a6d7164942c3c5c7",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "4f73504ec802a8b9babe",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "1fa9c7c7242560756ca6",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "d363763048fdfc9bcf8f",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "7c3be4c06c5c4fa1c8de",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "66a23900f7005b87e694",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "f296af8da0e74e71c669",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "2fd510262b7e84b798a8",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "fd63eaf0c1dd6b6540f7",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "b55523d22ccfe110b48a",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "4b676adfd671fe437634",
+    "errors": [
+      "action and human_escalation disagree"
+    ],
+    "field_correct": {
+      "category": false,
+      "priority": false,
+      "sentiment": false,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "e256761eaebef0e30005",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "b0e3690b1283478207dc",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "dce82bab667f81d9d47f",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "b1660680f021806bb241",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "65fab268b00853f557c6",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "efa721d058bee92e93e6",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "81ca467185cdd5411299",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": false,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "617826b8fb9dd026b25b",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "e2bf333797204e72c678",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "24b4f0df90ab02953168",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "6d3b98255250326fdea3",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "85aa7e0b24278fb99472",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "19767e7df860d8d3d6a3",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "99dae2c898fda2ef4650",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "e0b286ffa0660541e523",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "23126303f266231b5981",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "c789aa234c27900e5f3f",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "f067e96661dd0724398a",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "a85e98c15134bd527848",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "20cf3baa3043d3d5a1ae",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "7e8de3ea3eb39d47cc78",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "f88c464aa269144fd2cd",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "40d1a43a0ac3192bc703",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "ec763f8507668efd84ef",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "723881a38beb934f28e6",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "5ba56570aafb71b1df9c",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "3b7b126d6ee15ab433c6",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "e5a219725519ff3a77c8",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "747d5c673a21f67ae7bb",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "64ede0008f26ee032d33",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "f6edc5f02090a14dc1b2",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "169858904289eb36d56f",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "56f950a05be4a8c2724c",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "5254317f8663827e7460",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "facd74a4077be4bd9fb4",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "c7c5f7b84c4c6d9675ca",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "f4d3f4a61848b66471ce",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "ab38edc421a5a803993b",
+    "errors": [
+      "action and human_escalation disagree"
+    ],
+    "field_correct": {
+      "category": false,
+      "priority": false,
+      "sentiment": false,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "efb48ea1dad5e12cb54d",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "7e6f8a9ec9164c34c53d",
+    "errors": [
+      "action and human_escalation disagree"
+    ],
+    "field_correct": {
+      "category": false,
+      "priority": false,
+      "sentiment": false,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "be65bf9c13140bea2bdc",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "6384b2113d3216ef2782",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "568b887cf7f36694465e",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "f36ac0f778c70492de6c",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "28aff5ec8e549c4614be",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "339a6f03a8d343786e5b",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": true,
+      "recommended_action": true,
+      "human_escalation": true
+    }
+  }
+]

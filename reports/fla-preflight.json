@@ -1,0 +1,9 @@
+{
+  "forward_matches_torch_reference": true,
+  "finite_backward": true,
+  "first_compile_seconds": 49.130855399998836,
+  "warm_seconds_per_call": 0.0009002400001918431,
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "torch": "2.11.0+cu128",
+  "max_absolute_error": 0.00048828125
+}

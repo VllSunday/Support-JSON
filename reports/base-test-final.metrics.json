@@ -1,0 +1,80 @@
+{
+  "n": 108,
+  "received_predictions": 108,
+  "missing_predictions": 0,
+  "accuracy": {
+    "category": 0.5092592592592593,
+    "priority": 0.4074074074074074,
+    "sentiment": 0.5462962962962963,
+    "action": 0.24074074074074073,
+    "recommended_action": 0.24074074074074073,
+    "human_escalation": 0.4166666666666667
+  },
+  "field_only_accuracy": {
+    "category": 0.7685185185185185,
+    "priority": 0.7222222222222222,
+    "sentiment": 0.9629629629629629,
+    "action": 0.2777777777777778,
+    "recommended_action": 0.35185185185185186,
+    "human_escalation": 0.6018518518518519
+  },
+  "json_parse_rate": 1.0,
+  "schema_and_invariants_rate": 0.5462962962962963,
+  "missing_info_set_accuracy": 0.3333333333333333,
+  "supported_rule_ids_set_accuracy": 0.4166666666666667,
+  "macro_f1": {
+    "category": {
+      "value": 0.5523055018071629,
+      "labels_present_in_gold": [
+        "access",
+        "billing",
+        "cancellation",
+        "integration",
+        "product",
+        "refund",
+        "technical"
+      ]
+    },
+    "priority": {
+      "value": 0.39155722326454034,
+      "labels_present_in_gold": [
+        "critical",
+        "high",
+        "low",
+        "medium"
+      ]
+    }
+  },
+  "critical_recall": {
+    "value": 0.0,
+    "correct": 0,
+    "total": 3
+  },
+  "by_state": {
+    "conflict": {
+      "n": 27,
+      "action_accuracy": 0.1111111111111111
+    },
+    "false": {
+      "n": 27,
+      "action_accuracy": 0.1111111111111111
+    },
+    "true": {
+      "n": 27,
+      "action_accuracy": 0.2222222222222222
+    },
+    "unknown": {
+      "n": 27,
+      "action_accuracy": 0.5185185185185185
+    }
+  },
+  "human_evaluation": {
+    "reviewed": 0,
+    "coverage": 0.0,
+    "hallucination_rate": null,
+    "mean_response_quality_1_to_5": null
+  },
+  "dataset_fingerprint": "8170f1c034d1cf07a18e676e8b00cb4397104d748a967f7de29e3c26b9121529",
+  "scoring_version": "0.4",
+  "note": "Strict accuracy: invalid or missing outputs fail all task fields. Field-only accuracy: each exact, correctly typed field is scored independently, even when other fields violate the contract. Human rates cover reviewed subset only; null means not measured. Reply exact match is not used."
+}

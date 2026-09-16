@@ -1,0 +1,240 @@
+Loading config from configs\soup-pilot-native.yaml...
+┌────────────────────────────── Training Setup ───────────────────────────────┐
+│ Device:  NVIDIA GeForce RTX 5070 Ti                                         │
+│ Memory:  15.9 GB                                                            │
+│ Model:   ./models/qwen3.5-4b                                                │
+│ Task:    sft                                                                │
+│ Backend: transformers                                                       │
+│ LoRA:    r=16, alpha=32                                                     │
+│ Quant:   none                                                               │
+│ Seed:    42, data_seed=42                                                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+Loading dataset...
+Loaded: 192 train samples
+Run ID: run_20260917_223349_2885f3e1
+Setting up model + trainer...
+W0917 22:33:56.390000 41268 Lib\site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Liger Kernel enabled: fused RMSNorm, SwiGLU, CrossEntropy, RoPE
+Loading tokenizer: ./models/qwen3.5-4b
+Loading model: ./models/qwen3.5-4b
+
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/426 [00:00<00:55,  7.71it/s]
+Loading weights:   2%|▏         | 9/426 [00:00<00:09, 43.30it/s]
+Loading weights:   5%|▍         | 21/426 [00:00<00:05, 70.86it/s]
+Loading weights:   8%|▊         | 33/426 [00:00<00:04, 86.58it/s]
+Loading weights:  10%|▉         | 42/426 [00:00<00:06, 63.18it/s]
+Loading weights:  13%|█▎        | 56/426 [00:00<00:04, 81.95it/s]
+Loading weights:  15%|█▌        | 66/426 [00:00<00:04, 84.47it/s]
+Loading weights:  18%|█▊        | 76/426 [00:01<00:04, 85.40it/s]
+Loading weights:  20%|██        | 86/426 [00:01<00:03, 88.83it/s]
+Loading weights:  23%|██▎       | 96/426 [00:01<00:05, 63.81it/s]
+Loading weights:  26%|██▌       | 111/426 [00:01<00:04, 77.94it/s]
+Loading weights:  28%|██▊       | 120/426 [00:01<00:04, 74.80it/s]
+Loading weights:  30%|███       | 129/426 [00:01<00:04, 71.97it/s]
+Loading weights:  33%|███▎      | 139/426 [00:01<00:03, 76.33it/s]
+Loading weights:  35%|███▍      | 148/426 [00:02<00:06, 44.70it/s]
+Loading weights:  38%|███▊      | 164/426 [00:02<00:04, 62.57it/s]
+Loading weights:  41%|████      | 173/426 [00:02<00:04, 60.40it/s]
+Loading weights:  42%|████▏     | 181/426 [00:02<00:04, 56.08it/s]
+Loading weights:  46%|████▌     | 195/426 [00:02<00:03, 65.75it/s]
+Loading weights:  48%|████▊     | 203/426 [00:03<00:03, 59.92it/s]
+Loading weights:  51%|█████     | 217/426 [00:03<00:02, 75.20it/s]
+Loading weights:  53%|█████▎    | 226/426 [00:03<00:03, 61.30it/s]
+Loading weights:  55%|█████▍    | 234/426 [00:03<00:03, 63.35it/s]
+Loading weights:  57%|█████▋    | 242/426 [00:03<00:02, 65.28it/s]
+Loading weights:  59%|█████▊    | 250/426 [00:03<00:02, 60.05it/s]
+Loading weights:  60%|██████    | 257/426 [00:03<00:02, 60.50it/s]
+Loading weights:  64%|██████▎   | 271/426 [00:04<00:02, 65.63it/s]
+Loading weights:  66%|██████▋   | 283/426 [00:04<00:01, 76.58it/s]
+Loading weights:  69%|██████▊   | 292/426 [00:04<00:01, 74.44it/s]
+Loading weights:  71%|███████   | 301/426 [00:04<00:01, 74.66it/s]
+Loading weights:  73%|███████▎  | 309/426 [00:04<00:01, 67.84it/s]
+Loading weights:  76%|███████▌  | 322/426 [00:04<00:01, 78.98it/s]
+Loading weights:  78%|███████▊  | 331/426 [00:04<00:01, 77.20it/s]
+Loading weights:  80%|███████▉  | 339/426 [00:05<00:01, 66.72it/s]
+Loading weights:  83%|████████▎ | 354/426 [00:05<00:00, 76.92it/s]
+Loading weights:  85%|████████▍ | 362/426 [00:05<00:00, 70.17it/s]
+Loading weights:  89%|████████▊ | 378/426 [00:05<00:00, 88.54it/s]
+Loading weights:  91%|█████████ | 388/426 [00:05<00:00, 85.29it/s]
+Loading weights:  93%|█████████▎| 397/426 [00:05<00:00, 76.10it/s]
+Loading weights:  95%|█████████▌| 406/426 [00:05<00:00, 71.98it/s]
+Loading weights:  97%|█████████▋| 414/426 [00:05<00:00, 65.70it/s]
+Loading weights: 100%|██████████| 426/426 [00:06<00:00, 70.19it/s]
+LoRA applied: 32,464,896 trainable / 4,238,216,192 total (0.77%)
+
+Map:   0%|          | 0/192 [00:00<?, ? examples/s][transformers] return_assistant_tokens_mask==True but chat template does not contain `{% generation %}` keyword.
+
+Map:   5%|▌         | 10/192 [00:00<00:01, 97.45 examples/s]
+Map:  13%|█▎        | 25/192 [00:00<00:01, 123.64 examples/s]
+Map:  21%|██        | 40/192 [00:00<00:01, 130.66 examples/s]
+Map:  29%|██▊       | 55/192 [00:00<00:01, 133.64 examples/s]
+Map:  36%|███▋      | 70/192 [00:00<00:00, 134.35 examples/s]
+Map:  44%|████▍     | 85/192 [00:00<00:00, 135.63 examples/s]
+Map:  52%|█████▏    | 100/192 [00:00<00:00, 136.85 examples/s]
+Map:  60%|█████▉    | 115/192 [00:00<00:00, 137.25 examples/s]
+Map:  67%|██████▋   | 129/192 [00:00<00:00, 136.41 examples/s]
+Map:  74%|███████▍  | 143/192 [00:01<00:00, 134.05 examples/s]
+Map:  82%|████████▏ | 157/192 [00:01<00:00, 133.59 examples/s]
+Map:  89%|████████▉ | 171/192 [00:01<00:00, 133.85 examples/s]
+Map:  96%|█████████▋| 185/192 [00:01<00:00, 135.01 examples/s]
+Map: 100%|██████████| 192/192 [00:01<00:00, 123.81 examples/s]
+Gradient checkpointing: full (every block)
+
+Truncating train dataset:   0%|          | 0/192 [00:00<?, ? examples/s]
+Truncating train dataset: 100%|██████████| 192/192 [00:00<00:00, 34851.19 examples/s]
+Training started!
+
+[transformers] The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 248046, 'pad_token_id': 248044}.
+
+  0%|          | 0/24 [00:00<?, ?it/s][transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+
+  4%|▍         | 1/24 [00:22<08:42, 22.73s/it]
+                                              
+
+  4%|▍         | 1/24 [00:22<08:42, 22.73s/it]
+  8%|▊         | 2/24 [00:32<05:26, 14.85s/it]
+                                              
+
+  8%|▊         | 2/24 [00:32<05:26, 14.85s/it]
+ 12%|█▎        | 3/24 [00:40<04:14, 12.10s/it]
+                                              
+
+ 12%|█▎        | 3/24 [00:40<04:14, 12.10s/it]
+ 17%|█▋        | 4/24 [00:49<03:37, 10.85s/it]
+                                              
+
+ 17%|█▋        | 4/24 [00:49<03:37, 10.85s/it]
+ 21%|██        | 5/24 [00:58<03:11, 10.06s/it]
+                                              
+
+ 21%|██        | 5/24 [00:58<03:11, 10.06s/it]
+ 25%|██▌       | 6/24 [01:07<02:52,  9.58s/it]
+                                              
+
+ 25%|██▌       | 6/24 [01:07<02:52,  9.58s/it]
+ 29%|██▉       | 7/24 [01:16<02:39,  9.37s/it]
+                                              
+
+ 29%|██▉       | 7/24 [01:16<02:39,  9.37s/it]
+ 33%|███▎      | 8/24 [01:24<02:25,  9.12s/it]
+                                              
+
+ 33%|███▎      | 8/24 [01:24<02:25,  9.12s/it]
+ 38%|███▊      | 9/24 [01:33<02:14,  8.97s/it]
+                                              
+
+ 38%|███▊      | 9/24 [01:33<02:14,  8.97s/it]
+ 42%|████▏     | 10/24 [01:41<02:03,  8.86s/it]
+                                               
+
+ 42%|████▏     | 10/24 [01:41<02:03,  8.86s/it]
+ 46%|████▌     | 11/24 [01:50<01:54,  8.79s/it]
+                                               
+
+ 46%|████▌     | 11/24 [01:50<01:54,  8.79s/it]
+ 50%|█████     | 12/24 [01:59<01:44,  8.71s/it]
+                                               
+
+ 50%|█████     | 12/24 [01:59<01:44,  8.71s/it]
+ 54%|█████▍    | 13/24 [02:07<01:34,  8.63s/it]
+                                               
+
+ 54%|█████▍    | 13/24 [02:07<01:34,  8.63s/it]
+ 58%|█████▊    | 14/24 [02:16<01:26,  8.62s/it]
+                                               
+
+ 58%|█████▊    | 14/24 [02:16<01:26,  8.62s/it]
+ 62%|██████▎   | 15/24 [02:24<01:17,  8.57s/it]
+                                               
+
+ 62%|██████▎   | 15/24 [02:24<01:17,  8.57s/it]
+ 67%|██████▋   | 16/24 [02:33<01:08,  8.57s/it]
+                                               
+
+ 67%|██████▋   | 16/24 [02:33<01:08,  8.57s/it]
+ 71%|███████   | 17/24 [02:41<01:00,  8.62s/it]
+                                               
+
+ 71%|███████   | 17/24 [02:41<01:00,  8.62s/it]
+ 75%|███████▌  | 18/24 [02:50<00:52,  8.67s/it]
+                                               
+
+ 75%|███████▌  | 18/24 [02:50<00:52,  8.67s/it]
+ 79%|███████▉  | 19/24 [02:59<00:43,  8.66s/it]
+                                               
+
+ 79%|███████▉  | 19/24 [02:59<00:43,  8.66s/it]
+ 83%|████████▎ | 20/24 [03:07<00:34,  8.67s/it]
+                                               
+
+ 83%|████████▎ | 20/24 [03:07<00:34,  8.67s/it]
+ 88%|████████▊ | 21/24 [03:16<00:25,  8.66s/it]
+                                               
+
+ 88%|████████▊ | 21/24 [03:16<00:25,  8.66s/it]
+ 92%|█████████▏| 22/24 [03:25<00:17,  8.68s/it]
+                                               
+
+ 92%|█████████▏| 22/24 [03:25<00:17,  8.68s/it]
+ 96%|█████████▌| 23/24 [03:34<00:08,  8.74s/it]
+                                               
+
+ 96%|█████████▌| 23/24 [03:34<00:08,  8.74s/it]
+100%|██████████| 24/24 [03:42<00:00,  8.71s/it]
+                                               
+
+100%|██████████| 24/24 [03:42<00:00,  8.71s/it]
+                                               
+
+100%|██████████| 24/24 [03:43<00:00,  8.71s/it]
+100%|██████████| 24/24 [03:43<00:00,  9.32s/it]
+{'loss': '2.607', 'grad_norm': '11.33', 'learning_rate': '0', 'num_tokens': '8614', 'mean_token_accuracy': '0.5815', 'epoch': '0.04167'}
+{'loss': '2.619', 'grad_norm': '11.37', 'learning_rate': '0.0001', 'num_tokens': '1.706e+04', 'mean_token_accuracy': '0.5803', 'epoch': '0.08333'}
+{'loss': '1.929', 'grad_norm': '3.872', 'learning_rate': '9.953e-05', 'num_tokens': '2.552e+04', 'mean_token_accuracy': '0.6359', 'epoch': '0.125'}
+{'loss': '1.696', 'grad_norm': '1.138', 'learning_rate': '9.815e-05', 'num_tokens': '3.412e+04', 'mean_token_accuracy': '0.6681', 'epoch': '0.1667'}
+{'loss': '1.577', 'grad_norm': '1.055', 'learning_rate': '9.586e-05', 'num_tokens': '4.268e+04', 'mean_token_accuracy': '0.6819', 'epoch': '0.2083'}
+{'loss': '1.409', 'grad_norm': '0.987', 'learning_rate': '9.272e-05', 'num_tokens': '5.113e+04', 'mean_token_accuracy': '0.6987', 'epoch': '0.25'}
+{'loss': '1.271', 'grad_norm': '0.9647', 'learning_rate': '8.879e-05', 'num_tokens': '5.965e+04', 'mean_token_accuracy': '0.7244', 'epoch': '0.2917'}
+{'loss': '1.154', 'grad_norm': '0.9732', 'learning_rate': '8.413e-05', 'num_tokens': '6.82e+04', 'mean_token_accuracy': '0.7543', 'epoch': '0.3333'}
+{'loss': '1.014', 'grad_norm': '1.042', 'learning_rate': '7.883e-05', 'num_tokens': '7.663e+04', 'mean_token_accuracy': '0.786', 'epoch': '0.375'}
+{'loss': '0.8757', 'grad_norm': '1.105', 'learning_rate': '7.3e-05', 'num_tokens': '8.509e+04', 'mean_token_accuracy': '0.8102', 'epoch': '0.4167'}
+{'loss': '0.7488', 'grad_norm': '1.163', 'learning_rate': '6.674e-05', 'num_tokens': '9.351e+04', 'mean_token_accuracy': '0.83', 'epoch': '0.4583'}
+{'loss': '0.6987', 'grad_norm': '2.055', 'learning_rate': '6.017e-05', 'num_tokens': '1.021e+05', 'mean_token_accuracy': '0.836', 'epoch': '0.5'}
+{'loss': '0.589', 'grad_norm': '2.304', 'learning_rate': '5.341e-05', 'num_tokens': '1.106e+05', 'mean_token_accuracy': '0.8652', 'epoch': '0.5417'}
+{'loss': '0.4911', 'grad_norm': '1.184', 'learning_rate': '4.659e-05', 'num_tokens': '1.19e+05', 'mean_token_accuracy': '0.8891', 'epoch': '0.5833'}
+{'loss': '0.4599', 'grad_norm': '1.41', 'learning_rate': '3.983e-05', 'num_tokens': '1.274e+05', 'mean_token_accuracy': '0.8952', 'epoch': '0.625'}
+{'loss': '0.3981', 'grad_norm': '1.333', 'learning_rate': '3.326e-05', 'num_tokens': '1.359e+05', 'mean_token_accuracy': '0.9106', 'epoch': '0.6667'}
+{'loss': '0.3639', 'grad_norm': '1.036', 'learning_rate': '2.7e-05', 'num_tokens': '1.444e+05', 'mean_token_accuracy': '0.9155', 'epoch': '0.7083'}
+{'loss': '0.3443', 'grad_norm': '1.125', 'learning_rate': '2.117e-05', 'num_tokens': '1.531e+05', 'mean_token_accuracy': '0.9209', 'epoch': '0.75'}
+{'loss': '0.2765', 'grad_norm': '1.1', 'learning_rate': '1.587e-05', 'num_tokens': '1.617e+05', 'mean_token_accuracy': '0.9338', 'epoch': '0.7917'}
+{'loss': '0.2633', 'grad_norm': '0.9273', 'learning_rate': '1.121e-05', 'num_tokens': '1.701e+05', 'mean_token_accuracy': '0.942', 'epoch': '0.8333'}
+{'loss': '0.2943', 'grad_norm': '0.8258', 'learning_rate': '7.279e-06', 'num_tokens': '1.786e+05', 'mean_token_accuracy': '0.9361', 'epoch': '0.875'}
+{'loss': '0.2437', 'grad_norm': '0.7695', 'learning_rate': '4.139e-06', 'num_tokens': '1.872e+05', 'mean_token_accuracy': '0.9444', 'epoch': '0.9167'}
+{'loss': '0.2363', 'grad_norm': '0.7421', 'learning_rate': '1.854e-06', 'num_tokens': '1.957e+05', 'mean_token_accuracy': '0.9487', 'epoch': '0.9583'}
+{'loss': '0.2487', 'grad_norm': '0.7673', 'learning_rate': '4.657e-07', 'num_tokens': '2.042e+05', 'mean_token_accuracy': '0.9467', 'epoch': '1'}
+{'train_runtime': '223.6', 'train_samples_per_second': '0.859', 'train_steps_per_second': '0.107', 'train_loss': '0.9087', 'epoch': '1'}
+┌──────────── Soup Training: support-json-pilot-v0.3-native-liger ────────────┐
+│ Epoch 1.0/1   100%                                                          │
+│ Step:  24/24                                                                │
+│ Loss:  0.2487    LR: 4.66e-07                                               │
+│ Speed: 0.11 it/s                                                            │
+│ GPU peak: 8.9/15.9 GB                                                       │
+│ Grad:  0.7673                                                               │
+└──────────────────────── NVIDIA GeForce RTX 5070 Ti ─────────────────────────┘┌──────────────────────────── Training Complete! ─────────────────────────────┐
+│ Loss: 2.6073 -> 0.2487                                                      │
+│ Duration: 3m                                                                │
+│ Output: checkpoints\support-json-pilot-v0.3-native-liger                    │
+│ Run ID: run_20260917_223349_2885f3e1                                        │
+│                                                                             │
+│ Quick test:  soup chat --model                                              │
+│ checkpoints\support-json-pilot-v0.3-native-liger                            │
+│ Push to HF:  soup push --model                                              │
+│ checkpoints\support-json-pilot-v0.3-native-liger                            │
+│ Merge LoRA:  soup merge --adapter                                           │
+│ checkpoints\support-json-pilot-v0.3-native-liger                            │
+│ Export GGUF: soup export --model                                            │
+│ checkpoints\support-json-pilot-v0.3-native-liger                            │
+│ Run details: soup runs show run_20260917_223349_2885f3e1                    │
+└─────────────────────────────────────────────────────────────────────────────┘

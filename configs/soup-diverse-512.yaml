@@ -1,0 +1,36 @@
+base: ./models/qwen3.5-4b
+task: sft
+modality: text
+backend: transformers
+experiment_name: support-json-diverse-v0.5-512
+data:
+  train: ./data/diverse-v0.5/train.chatml.jsonl
+  format: chatml
+  val_split: 0.0
+  max_length: 2048
+  train_on_responses_only: true
+  train_on_prompt: false
+training:
+  epochs: 2
+  lr: 0.0001
+  batch_size: 2
+  gradient_accumulation_steps: 4
+  seed: 42
+  data_seed: 42
+  warmup_ratio: 0.05
+  optimizer: adamw_torch
+  quantization: none
+  load_in_16bit: true
+  gradient_checkpointing: true
+  packing: false
+  stream_layers: false
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.0
+    target_modules: all-linear
+  logging_steps: 1
+  save_steps: 100
+  train_on_eot: true
+  use_liger: true
+output: ./checkpoints

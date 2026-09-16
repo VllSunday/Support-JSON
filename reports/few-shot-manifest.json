@@ -1,0 +1,13 @@
+{
+  "source": "data/pilot-v0.2/train.jsonl",
+  "source_ids": [
+    "279d45c7cd8bbb96f7e0",
+    "66a51dc0615438679e52",
+    "7858d6ceec8f2a7ab4d9",
+    "f9a048ee6a3e0b18c765"
+  ],
+  "fingerprint": "77aa27f0408c9fd266d969549563a96a2d8f1ed1d2db566ba5125ce8e710c66b",
+  "n": 4,
+  "frozen_before_test": true,
+  "note": "Single predefined control prompt; no tuning on test results."
+}

@@ -1,0 +1,82 @@
+{
+  "stage": "benchmark_complete",
+  "utc": "2026-09-17T18:40:07.563706+00:00",
+  "version": "v5",
+  "adapter": "checkpoints/support-json-diverse-v0.5-512",
+  "training_rows": 512,
+  "rank": [
+    0.8958333333333334,
+    0.9583333333333334,
+    0.9583333333333334,
+    0.9583333333333334
+  ],
+  "critical_recall": {
+    "value": 1.0,
+    "correct": 3,
+    "total": 3
+  },
+  "passes_validation_critical_constraint": true,
+  "selected_on": "validation_only_before_final_test",
+  "selection_order": [
+    "action_accuracy",
+    "schema_and_invariants_rate",
+    "priority_accuracy",
+    "category_accuracy"
+  ],
+  "constraint": "validation critical recall >= base; chosen before diverse validation/test",
+  "all_candidates": [
+    {
+      "version": "v3",
+      "adapter": "checkpoints/support-json-pilot-v0.3-native-liger",
+      "training_rows": 192,
+      "rank": [
+        0.59375,
+        0.8958333333333334,
+        0.71875,
+        0.8020833333333334
+      ],
+      "critical_recall": {
+        "value": 0.0,
+        "correct": 0,
+        "total": 3
+      },
+      "passes_validation_critical_constraint": false
+    },
+    {
+      "version": "v4",
+      "adapter": "checkpoints/support-json-expanded-v0.4-1024",
+      "training_rows": 1024,
+      "rank": [
+        0.7708333333333334,
+        0.9895833333333334,
+        0.9583333333333334,
+        0.9895833333333334
+      ],
+      "critical_recall": {
+        "value": 1.0,
+        "correct": 3,
+        "total": 3
+      },
+      "passes_validation_critical_constraint": true
+    },
+    {
+      "version": "v5",
+      "adapter": "checkpoints/support-json-diverse-v0.5-512",
+      "training_rows": 512,
+      "rank": [
+        0.8958333333333334,
+        0.9583333333333334,
+        0.9583333333333334,
+        0.9583333333333334
+      ],
+      "critical_recall": {
+        "value": 1.0,
+        "correct": 3,
+        "total": 3
+      },
+      "passes_validation_critical_constraint": true
+    }
+  ],
+  "all_10000_candidates_trained": false,
+  "training_report": "reports/training-diverse-v5.json"
+}

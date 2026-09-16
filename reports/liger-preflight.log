@@ -1,0 +1,1 @@
+{"frozen_classifier": true, "masked_prompt": true, "loss_matches_reference": true, "gradient_matches_reference": true, "reference_loss": 44.34337615966797, "fused_loss": 44.34337615966797, "max_gradient_absolute_error": 0.0}

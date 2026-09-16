@@ -1,0 +1,57 @@
+[
+  {
+    "id": "686889eef8ad01a031c5",
+    "errors": [],
+    "field_correct": {
+      "category": true,
+      "priority": true,
+      "sentiment": true,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": true
+    }
+  },
+  {
+    "id": "c245ab5549146678dcf5",
+    "errors": [
+      "missing_info must be nonempty exactly for ask_details in v0.2"
+    ],
+    "field_correct": {
+      "category": false,
+      "priority": false,
+      "sentiment": false,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "0aeee33c5a6fa1e12d1c",
+    "errors": [
+      "missing_info must be nonempty exactly for ask_details in v0.2"
+    ],
+    "field_correct": {
+      "category": false,
+      "priority": false,
+      "sentiment": false,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "a572745e710a05f2a62b",
+    "errors": [
+      "missing_info must be nonempty exactly for ask_details in v0.2",
+      "recommended_action disagrees with action"
+    ],
+    "field_correct": {
+      "category": false,
+      "priority": false,
+      "sentiment": false,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  }
+]

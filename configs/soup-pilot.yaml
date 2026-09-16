@@ -1,0 +1,34 @@
+# Validated against Soup 0.75.0's installed schema; GPU execution is not yet verified.
+base: Qwen/Qwen3.5-4B
+task: sft
+modality: text
+backend: unsloth
+experiment_name: support-json-pilot-v0.2
+data:
+  train: ./data/pilot-v0.2/train.chatml.jsonl
+  format: chatml
+  # Do not randomly mix policy/company groups. Our validation is evaluated separately.
+  val_split: 0.0
+  max_length: 4096
+  train_on_responses_only: true
+  train_on_prompt: false
+training:
+  epochs: 1
+  lr: 0.0001
+  batch_size: 1
+  gradient_accumulation_steps: 8
+  seed: 42
+  data_seed: 42
+  warmup_ratio: 0.05
+  optimizer: adamw_torch
+  quantization: none
+  load_in_16bit: true
+  gradient_checkpointing: true
+  packing: false
+  stream_layers: false
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.0
+    target_modules: all-linear
+output: ./checkpoints/support-json-pilot-v0.2

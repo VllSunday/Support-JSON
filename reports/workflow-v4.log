@@ -1,0 +1,14 @@
+{"stage": "waiting_for_first_validation_comparison", "utc": "2026-09-17T17:43:13.949102+00:00"}
+{"stage": "training_expanded_1024", "utc": "2026-09-17T17:48:28.010389+00:00", "first_validation_rank": [0.59375, 0.8958333333333334, 0.71875, 0.8020833333333334]}
+{"stage": "expanded_validation", "utc": "2026-09-17T18:07:30.091467+00:00"}
+{"stage": "final_test_base", "utc": "2026-09-17T18:12:20.509826+00:00", "adapter": "checkpoints/support-json-expanded-v0.4-1024", "selected_on": "validation_only_before_final_test", "selection_order": ["action_accuracy", "schema_and_invariants_rate", "priority_accuracy", "category_accuracy"], "pilot_validation_rank": [0.59375, 0.8958333333333334, 0.71875, 0.8020833333333334], "expanded_validation_rank": [0.7708333333333334, 0.9895833333333334, 0.9583333333333334, 0.9895833333333334], "training_rows": 1024, "all_10000_candidates_trained": false}
+{"stage": "failed", "utc": "2026-09-17T18:12:25.056173+00:00", "error": "Failed stage; inspect reports/base-test-final.log"}
+Traceback (most recent call last):
+  File "C:\Users\zheny\OneDrive\Desktop\projects\finetune-capstone-project\scripts\continue_experiment.py", line 83, in <module>
+    try:
+        ^
+  File "C:\Users\zheny\OneDrive\Desktop\projects\finetune-capstone-project\scripts\continue_experiment.py", line 69, in main
+    command('reports/base-test-final.log', PYTHON, '-X', 'utf8', 'scripts/run_transformers.py',
+  File "C:\Users\zheny\OneDrive\Desktop\projects\finetune-capstone-project\scripts\continue_experiment.py", line 27, in command
+    raise RuntimeError(f'Failed stage; inspect {log}')
+RuntimeError: Failed stage; inspect reports/base-test-final.log

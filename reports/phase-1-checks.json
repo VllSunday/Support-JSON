@@ -1,0 +1,10 @@
+{
+  "dataset": "data/pilot-v0.2/manifest.json",
+  "unit_tests_passed": 19,
+  "soup_config_valid": true,
+  "soup_chatml_valid_rows": 192,
+  "tokenizer_preflight": "reports/tokenizer-preflight.json",
+  "model_benchmark_run": false,
+  "training_run": false,
+  "purpose": "completed_phase_1_data_and_evaluation_tools"
+}

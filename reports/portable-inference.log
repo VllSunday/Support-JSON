@@ -1,0 +1,1 @@
+{"category": "refund", "priority": "medium", "sentiment": "positive", "action": "propose_action", "recommended_action": "propose_refund", "reply": "Условия возврата соблюдены. Можно предложить заявку на возврат; сама операция пока не выполнена.", "missing_info": [], "supported_rule_ids": ["7281267f_decision", "7281267f_priority"], "human_escalation": false}

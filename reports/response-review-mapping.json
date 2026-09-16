@@ -1,0 +1,254 @@
+{
+  "R01": {
+    "record_id": "f3ffeb32a961ed846ad8",
+    "family": "access_sso_admin",
+    "state": "conflict",
+    "A": "base",
+    "B": "lora"
+  },
+  "R02": {
+    "record_id": "48fcd373ffaff621ed53",
+    "family": "access_sso_admin",
+    "state": "false",
+    "A": "lora",
+    "B": "base"
+  },
+  "R03": {
+    "record_id": "e122f9c9b9718c4fc332",
+    "family": "access_sso_admin",
+    "state": "true",
+    "A": "lora",
+    "B": "base"
+  },
+  "R04": {
+    "record_id": "a1204c344c4e45e68a64",
+    "family": "access_sso_admin",
+    "state": "unknown",
+    "A": "lora",
+    "B": "base"
+  },
+  "R05": {
+    "record_id": "617826b8fb9dd026b25b",
+    "family": "billing_user_vs_system",
+    "state": "conflict",
+    "A": "base",
+    "B": "lora"
+  },
+  "R06": {
+    "record_id": "dce82bab667f81d9d47f",
+    "family": "billing_user_vs_system",
+    "state": "false",
+    "A": "base",
+    "B": "lora"
+  },
+  "R07": {
+    "record_id": "e256761eaebef0e30005",
+    "family": "billing_user_vs_system",
+    "state": "true",
+    "A": "lora",
+    "B": "base"
+  },
+  "R08": {
+    "record_id": "efa721d058bee92e93e6",
+    "family": "billing_user_vs_system",
+    "state": "unknown",
+    "A": "base",
+    "B": "lora"
+  },
+  "R09": {
+    "record_id": "f28dcb3a1fd9d12f5381",
+    "family": "cancel_annual_notice",
+    "state": "conflict",
+    "A": "base",
+    "B": "lora"
+  },
+  "R10": {
+    "record_id": "724d661b5cc17467796f",
+    "family": "cancel_annual_notice",
+    "state": "false",
+    "A": "lora",
+    "B": "base"
+  },
+  "R11": {
+    "record_id": "a3952fbf181b960fb398",
+    "family": "cancel_annual_notice",
+    "state": "true",
+    "A": "lora",
+    "B": "base"
+  },
+  "R12": {
+    "record_id": "720a552b75f7eedc58be",
+    "family": "cancel_annual_notice",
+    "state": "unknown",
+    "A": "base",
+    "B": "lora"
+  },
+  "R13": {
+    "record_id": "339a6f03a8d343786e5b",
+    "family": "integration_allowed_connector",
+    "state": "conflict",
+    "A": "base",
+    "B": "lora"
+  },
+  "R14": {
+    "record_id": "7e6f8a9ec9164c34c53d",
+    "family": "integration_allowed_connector",
+    "state": "false",
+    "A": "base",
+    "B": "lora"
+  },
+  "R15": {
+    "record_id": "c7c5f7b84c4c6d9675ca",
+    "family": "integration_allowed_connector",
+    "state": "true",
+    "A": "base",
+    "B": "lora"
+  },
+  "R16": {
+    "record_id": "6384b2113d3216ef2782",
+    "family": "integration_allowed_connector",
+    "state": "unknown",
+    "A": "base",
+    "B": "lora"
+  },
+  "R17": {
+    "record_id": "7e8de3ea3eb39d47cc78",
+    "family": "invoice_verified_details",
+    "state": "conflict",
+    "A": "lora",
+    "B": "base"
+  },
+  "R18": {
+    "record_id": "e0b286ffa0660541e523",
+    "family": "invoice_verified_details",
+    "state": "false",
+    "A": "base",
+    "B": "lora"
+  },
+  "R19": {
+    "record_id": "85aa7e0b24278fb99472",
+    "family": "invoice_verified_details",
+    "state": "true",
+    "A": "lora",
+    "B": "base"
+  },
+  "R20": {
+    "record_id": "c789aa234c27900e5f3f",
+    "family": "invoice_verified_details",
+    "state": "unknown",
+    "A": "base",
+    "B": "lora"
+  },
+  "R21": {
+    "record_id": "5254317f8663827e7460",
+    "family": "product_audit_enterprise",
+    "state": "conflict",
+    "A": "base",
+    "B": "lora"
+  },
+  "R22": {
+    "record_id": "e5a219725519ff3a77c8",
+    "family": "product_audit_enterprise",
+    "state": "false",
+    "A": "lora",
+    "B": "base"
+  },
+  "R23": {
+    "record_id": "40d1a43a0ac3192bc703",
+    "family": "product_audit_enterprise",
+    "state": "true",
+    "A": "lora",
+    "B": "base"
+  },
+  "R24": {
+    "record_id": "f6edc5f02090a14dc1b2",
+    "family": "product_audit_enterprise",
+    "state": "unknown",
+    "A": "base",
+    "B": "lora"
+  },
+  "R25": {
+    "record_id": "36cffd1ff12f63103e1c",
+    "family": "refund_monthly_only",
+    "state": "conflict",
+    "A": "lora",
+    "B": "base"
+  },
+  "R26": {
+    "record_id": "4052f59bccdd39184a47",
+    "family": "refund_monthly_only",
+    "state": "false",
+    "A": "base",
+    "B": "lora"
+  },
+  "R27": {
+    "record_id": "4a373306fdf31270746b",
+    "family": "refund_monthly_only",
+    "state": "true",
+    "A": "lora",
+    "B": "base"
+  },
+  "R28": {
+    "record_id": "f1e413bf6b84ba6425ff",
+    "family": "refund_monthly_only",
+    "state": "unknown",
+    "A": "base",
+    "B": "lora"
+  },
+  "R29": {
+    "record_id": "83262c5b42910c468a1a",
+    "family": "refund_trial_exception",
+    "state": "conflict",
+    "A": "base",
+    "B": "lora"
+  },
+  "R30": {
+    "record_id": "1eecc461ebb91f88dcdc",
+    "family": "refund_trial_exception",
+    "state": "false",
+    "A": "base",
+    "B": "lora"
+  },
+  "R31": {
+    "record_id": "c3629c4610e220195591",
+    "family": "refund_trial_exception",
+    "state": "true",
+    "A": "base",
+    "B": "lora"
+  },
+  "R32": {
+    "record_id": "49d3ec151d2e8c5207e0",
+    "family": "refund_trial_exception",
+    "state": "unknown",
+    "A": "lora",
+    "B": "base"
+  },
+  "R33": {
+    "record_id": "fd63eaf0c1dd6b6540f7",
+    "family": "technical_workspace_incident",
+    "state": "conflict",
+    "A": "base",
+    "B": "lora"
+  },
+  "R34": {
+    "record_id": "4f73504ec802a8b9babe",
+    "family": "technical_workspace_incident",
+    "state": "false",
+    "A": "base",
+    "B": "lora"
+  },
+  "R35": {
+    "record_id": "4c305ef8d4ab270b54f8",
+    "family": "technical_workspace_incident",
+    "state": "true",
+    "A": "lora",
+    "B": "base"
+  },
+  "R36": {
+    "record_id": "d363763048fdfc9bcf8f",
+    "family": "technical_workspace_incident",
+    "state": "unknown",
+    "A": "base",
+    "B": "lora"
+  }
+}

@@ -1,0 +1,15 @@
+waiting_for_main_workflow_exit
+failed
+Traceback (most recent call last):
+  File "C:\Users\zheny\OneDrive\Desktop\projects\finetune-capstone-project\scripts\run_few_shot_control.py", line 62, in <module>
+    main()
+  File "C:\Users\zheny\OneDrive\Desktop\projects\finetune-capstone-project\scripts\run_few_shot_control.py", line 28, in main
+    main_state=json.loads((ROOT/args.workflow).read_text(encoding='utf-8'))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zheny\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zheny\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\zheny\\OneDrive\\Desktop\\projects\\finetune-capstone-project\\reports\\workflow-v5.json'

@@ -1,0 +1,25 @@
+{
+  "clusters": 9,
+  "resamples": 5000,
+  "seed": 42,
+  "method": "paired percentile bootstrap, resampling whole scenario families",
+  "delta_pp_95_interval": {
+    "category": [
+      0.0,
+      49.074074074074076
+    ],
+    "priority": [
+      25.0,
+      29.629629629629626
+    ],
+    "action": [
+      43.51851851851852,
+      79.62962962962963
+    ],
+    "schema_and_invariants": [
+      15.74074074074074,
+      68.51851851851852
+    ]
+  },
+  "note": "Only nine authored synthetic policy families and one test company. Intervals describe this suite, not arbitrary products/company traffic. Tones and states within a family are kept together."
+}

@@ -1,0 +1,46 @@
+{
+  "model": "models/qwen3.5-4b",
+  "adapter": "checkpoints/support-json-pilot-v0.3-native-liger",
+  "dataset_fingerprint": "e3bc9e4b9fffd05cfa66779f890026b26726bf3d068e9d5ec3aec413fca258a4",
+  "n": 96,
+  "prompt_fingerprint": "50d6cc6d4a573c9c797aebb5d4a577a1ee4bad8deb300c1fa23e478eaf879df4",
+  "settings": {
+    "do_sample": false,
+    "max_new_tokens": 700,
+    "enable_thinking": false,
+    "constrained_json": false,
+    "batch_size": 4,
+    "eos_token_ids": [
+      248044,
+      248046
+    ],
+    "pad_token_id": 248044
+  },
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "peak_allocated_gb": 8.836491107940674,
+  "packages": {
+    "transformers": "5.17.0",
+    "peft": "0.21.0",
+    "trl": "0.29.1",
+    "soup-cli": "0.75.0",
+    "flash-linear-attention": "0.5.2",
+    "triton-windows": "3.6.0.post26"
+  },
+  "download_manifest": {
+    "repo": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "files": [
+      {
+        "filename": "model.safetensors-00001-of-00002.safetensors",
+        "sha256": "26a93f066e1916adb13453dae5a0c707c0fbc71299ed98779571a907b8e74c61",
+        "bytes": 5329398688
+      },
+      {
+        "filename": "model.safetensors-00002-of-00002.safetensors",
+        "sha256": "cb544bd9bfae93dc59b0f22b292f5933573854a7f9b97835c67060d7d910e188",
+        "bytes": 3990429408
+      }
+    ]
+  }
+}

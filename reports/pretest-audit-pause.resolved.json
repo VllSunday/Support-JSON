@@ -1,0 +1,5 @@
+{
+  "reason": "Expanded validation incorrectly escalates a known eligible refund; review complete validation before final test.",
+  "scope": "Internal experiment review, no user approval required. No test predictions have been used to tune data.",
+  "next": "Inspect validation; improve diversity or freeze selected adapter; preserve and resolve this marker before running test."
+}

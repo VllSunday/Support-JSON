@@ -1,0 +1,67 @@
+{
+  "n": 48,
+  "received_predictions": 48,
+  "missing_predictions": 0,
+  "accuracy": {
+    "category": 1.0,
+    "priority": 1.0,
+    "sentiment": 1.0,
+    "action": 1.0,
+    "recommended_action": 1.0,
+    "human_escalation": 1.0
+  },
+  "json_parse_rate": 1.0,
+  "schema_and_invariants_rate": 1.0,
+  "missing_info_set_accuracy": 1.0,
+  "supported_rule_ids_set_accuracy": 1.0,
+  "macro_f1": {
+    "category": {
+      "value": 1.0,
+      "labels_present_in_gold": [
+        "access",
+        "cancellation",
+        "integration",
+        "refund"
+      ]
+    },
+    "priority": {
+      "value": 1.0,
+      "labels_present_in_gold": [
+        "high",
+        "medium"
+      ]
+    }
+  },
+  "critical_recall": {
+    "value": null,
+    "correct": 0,
+    "total": 0
+  },
+  "by_state": {
+    "conflict": {
+      "n": 12,
+      "action_accuracy": 1.0
+    },
+    "false": {
+      "n": 12,
+      "action_accuracy": 1.0
+    },
+    "true": {
+      "n": 12,
+      "action_accuracy": 1.0
+    },
+    "unknown": {
+      "n": 12,
+      "action_accuracy": 1.0
+    }
+  },
+  "human_evaluation": {
+    "reviewed": 0,
+    "coverage": 0.0,
+    "hallucination_rate": null,
+    "mean_response_quality_1_to_5": null
+  },
+  "dataset_fingerprint": "f3af3a1a72870a9968653d2ada919d111f68683adf836ec55857647d0c3abf6d",
+  "note": "Invalid or missing outputs fail all task fields. Human rates cover reviewed subset only; null means not measured. Reply exact match is not used.",
+  "run_type": "harness_selfcheck_not_model_benchmark"
+}

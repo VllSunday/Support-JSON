@@ -1,0 +1,117 @@
+{
+  "n": 96,
+  "dataset_fingerprint": "e3bc9e4b9fffd05cfa66779f890026b26726bf3d068e9d5ec3aec413fca258a4",
+  "accuracy": {
+    "category": {
+      "base": 0.4895833333333333,
+      "lora": 0.8020833333333334,
+      "delta_pp": 31.250000000000007
+    },
+    "priority": {
+      "base": 0.3229166666666667,
+      "lora": 0.71875,
+      "delta_pp": 39.58333333333333
+    },
+    "sentiment": {
+      "base": 0.4895833333333333,
+      "lora": 0.8958333333333334,
+      "delta_pp": 40.62500000000001
+    },
+    "action": {
+      "base": 0.20833333333333334,
+      "lora": 0.59375,
+      "delta_pp": 38.541666666666664
+    },
+    "recommended_action": {
+      "base": 0.20833333333333334,
+      "lora": 0.59375,
+      "delta_pp": 38.541666666666664
+    },
+    "human_escalation": {
+      "base": 0.3229166666666667,
+      "lora": 0.65625,
+      "delta_pp": 33.33333333333333
+    }
+  },
+  "latency": {
+    "base": {
+      "median_seconds": 11.5735,
+      "p95_seconds": 13.456,
+      "total_seconds": 289.051,
+      "median_amortized_seconds": 2.893375,
+      "token_limit_hits": 0
+    },
+    "lora": {
+      "median_seconds": 12.494,
+      "p95_seconds": 15.955,
+      "total_seconds": 306.76300000000003,
+      "median_amortized_seconds": 3.1235,
+      "token_limit_hits": 0
+    }
+  },
+  "json": {
+    "json_parse_rate": {
+      "base": 1.0,
+      "lora": 1.0
+    },
+    "schema_and_invariants_rate": {
+      "base": 0.4895833333333333,
+      "lora": 0.8958333333333334
+    },
+    "missing_info_set_accuracy": {
+      "base": 0.3854166666666667,
+      "lora": 0.8125
+    },
+    "supported_rule_ids_set_accuracy": {
+      "base": 0.3333333333333333,
+      "lora": 0.7916666666666666
+    }
+  },
+  "field_only_accuracy": {
+    "category": {
+      "base": 0.96875,
+      "lora": 0.875,
+      "delta_pp": -9.375
+    },
+    "priority": {
+      "base": 0.71875,
+      "lora": 0.8229166666666666,
+      "delta_pp": 10.416666666666663
+    },
+    "sentiment": {
+      "base": 0.9895833333333334,
+      "lora": 1.0,
+      "delta_pp": 1.041666666666663
+    },
+    "action": {
+      "base": 0.28125,
+      "lora": 0.6145833333333334,
+      "delta_pp": 33.333333333333336
+    },
+    "recommended_action": {
+      "base": 0.34375,
+      "lora": 0.625,
+      "delta_pp": 28.125
+    },
+    "human_escalation": {
+      "base": 0.5833333333333334,
+      "lora": 0.7291666666666666,
+      "delta_pp": 14.583333333333325
+    }
+  },
+  "scoring_version": "0.4",
+  "human_evaluation": {
+    "base": {
+      "reviewed": 0,
+      "coverage": 0.0,
+      "hallucination_rate": null,
+      "mean_response_quality_1_to_5": null
+    },
+    "lora": {
+      "reviewed": 0,
+      "coverage": 0.0,
+      "hallucination_rate": null,
+      "mean_response_quality_1_to_5": null
+    }
+  }
+}

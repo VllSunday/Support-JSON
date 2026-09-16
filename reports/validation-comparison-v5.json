@@ -1,0 +1,227 @@
+{
+  "n": 96,
+  "dataset_fingerprint": "e3bc9e4b9fffd05cfa66779f890026b26726bf3d068e9d5ec3aec413fca258a4",
+  "accuracy": {
+    "category": {
+      "base": 0.4895833333333333,
+      "lora": 0.9583333333333334,
+      "delta_pp": 46.87500000000001
+    },
+    "priority": {
+      "base": 0.3229166666666667,
+      "lora": 0.9583333333333334,
+      "delta_pp": 63.54166666666667
+    },
+    "sentiment": {
+      "base": 0.4895833333333333,
+      "lora": 0.9583333333333334,
+      "delta_pp": 46.87500000000001
+    },
+    "action": {
+      "base": 0.20833333333333334,
+      "lora": 0.8958333333333334,
+      "delta_pp": 68.75
+    },
+    "recommended_action": {
+      "base": 0.20833333333333334,
+      "lora": 0.8958333333333334,
+      "delta_pp": 68.75
+    },
+    "human_escalation": {
+      "base": 0.3229166666666667,
+      "lora": 0.9479166666666666,
+      "delta_pp": 62.5
+    }
+  },
+  "latency": {
+    "base": {
+      "median_seconds": 11.5735,
+      "p95_seconds": 13.456,
+      "total_seconds": 289.051,
+      "median_amortized_seconds": 2.893375,
+      "token_limit_hits": 0
+    },
+    "lora": {
+      "median_seconds": 12.08,
+      "p95_seconds": 14.069,
+      "total_seconds": 290.114,
+      "median_amortized_seconds": 3.02,
+      "token_limit_hits": 0
+    }
+  },
+  "json": {
+    "json_parse_rate": {
+      "base": 1.0,
+      "lora": 0.9791666666666666
+    },
+    "schema_and_invariants_rate": {
+      "base": 0.4895833333333333,
+      "lora": 0.9583333333333334
+    },
+    "missing_info_set_accuracy": {
+      "base": 0.3854166666666667,
+      "lora": 0.90625
+    },
+    "supported_rule_ids_set_accuracy": {
+      "base": 0.3333333333333333,
+      "lora": 0.9583333333333334
+    }
+  },
+  "generation_settings": {
+    "do_sample": false,
+    "max_new_tokens": 700,
+    "enable_thinking": false,
+    "constrained_json": false,
+    "batch_size": 4,
+    "eos_token_ids": [
+      248044,
+      248046
+    ],
+    "pad_token_id": 248044
+  },
+  "field_only_accuracy": {
+    "category": {
+      "base": 0.96875,
+      "lora": 0.9791666666666666,
+      "delta_pp": 1.041666666666663
+    },
+    "priority": {
+      "base": 0.71875,
+      "lora": 0.9791666666666666,
+      "delta_pp": 26.041666666666664
+    },
+    "sentiment": {
+      "base": 0.9895833333333334,
+      "lora": 0.9791666666666666,
+      "delta_pp": -1.041666666666674
+    },
+    "action": {
+      "base": 0.28125,
+      "lora": 0.8958333333333334,
+      "delta_pp": 61.458333333333336
+    },
+    "recommended_action": {
+      "base": 0.34375,
+      "lora": 0.8958333333333334,
+      "delta_pp": 55.208333333333336
+    },
+    "human_escalation": {
+      "base": 0.5833333333333334,
+      "lora": 0.9583333333333334,
+      "delta_pp": 37.5
+    }
+  },
+  "scoring_version": "0.4",
+  "critical_recall": {
+    "base": {
+      "value": 0.6666666666666666,
+      "correct": 2,
+      "total": 3
+    },
+    "lora": {
+      "value": 1.0,
+      "correct": 3,
+      "total": 3
+    }
+  },
+  "by_state": {
+    "base": {
+      "conflict": {
+        "n": 24,
+        "action_accuracy": 0.20833333333333334
+      },
+      "false": {
+        "n": 24,
+        "action_accuracy": 0.08333333333333333
+      },
+      "true": {
+        "n": 24,
+        "action_accuracy": 0.20833333333333334
+      },
+      "unknown": {
+        "n": 24,
+        "action_accuracy": 0.3333333333333333
+      }
+    },
+    "lora": {
+      "conflict": {
+        "n": 24,
+        "action_accuracy": 1.0
+      },
+      "false": {
+        "n": 24,
+        "action_accuracy": 1.0
+      },
+      "true": {
+        "n": 24,
+        "action_accuracy": 0.875
+      },
+      "unknown": {
+        "n": 24,
+        "action_accuracy": 0.7083333333333334
+      }
+    }
+  },
+  "macro_f1_strict": {
+    "base": {
+      "category": {
+        "value": 0.6044323117222757,
+        "labels_present_in_gold": [
+          "access",
+          "billing",
+          "cancellation",
+          "integration",
+          "product",
+          "refund",
+          "technical"
+        ]
+      },
+      "priority": {
+        "value": 0.47012752469408814,
+        "labels_present_in_gold": [
+          "critical",
+          "high",
+          "low",
+          "medium"
+        ]
+      }
+    },
+    "lora": {
+      "category": {
+        "value": 0.9745906267645398,
+        "labels_present_in_gold": [
+          "access",
+          "billing",
+          "cancellation",
+          "integration",
+          "product",
+          "refund",
+          "technical"
+        ]
+      },
+      "priority": {
+        "value": 0.9864864864864865,
+        "labels_present_in_gold": [
+          "critical",
+          "high",
+          "low",
+          "medium"
+        ]
+      }
+    }
+  },
+  "human_evaluation": {
+    "base": {
+      "reviewed": 0,
+      "coverage": 0.0,
+      "hallucination_rate": null,
+      "mean_response_quality_1_to_5": null
+    },
+    "lora": {
+      "reviewed": 0,
+      "coverage": 0.0,
+      "hallucination_rate": null,
+      "mean_response_quality_1_to_5": null
+    }
+  }
+}

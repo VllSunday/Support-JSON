@@ -1,0 +1,25 @@
+test_classification_and_output_contract_are_measured_separately (test_project.PipelineTests.test_classification_and_output_contract_are_measured_separately) ... ok
+test_company_leak_is_rejected (test_project.PipelineTests.test_company_leak_is_rejected) ... ok
+test_cosmetic_duplicates_are_removed (test_project.PipelineTests.test_cosmetic_duplicates_are_removed) ... ok
+test_critical_can_have_neutral_tone (test_project.PipelineTests.test_critical_can_have_neutral_tone) ... ok
+test_duplicate_json_keys_and_markdown_rejected (test_project.PipelineTests.test_duplicate_json_keys_and_markdown_rejected) ... ok
+test_escalation_and_rule_reference_invariants (test_project.PipelineTests.test_escalation_and_rule_reference_invariants) ... ok
+test_family_leak_is_rejected (test_project.PipelineTests.test_family_leak_is_rejected) ... ok
+test_generation_is_reproducible (test_project.PipelineTests.test_generation_is_reproducible) ... ok
+test_gold_and_audit_do_not_reach_prompt (test_project.PipelineTests.test_gold_and_audit_do_not_reach_prompt) ... ok
+test_hallucination_is_unmeasured_without_reviews (test_project.PipelineTests.test_hallucination_is_unmeasured_without_reviews) ... ok
+test_human_review_rates_are_measured_separately (test_project.PipelineTests.test_human_review_rates_are_measured_separately) ... ok
+test_invalid_json_counts_as_failure (test_project.PipelineTests.test_invalid_json_counts_as_failure) ... ok
+test_missing_predictions_count_as_failures (test_project.PipelineTests.test_missing_predictions_count_as_failures) ... ok
+test_schema_rejects_extra_field (test_project.PipelineTests.test_schema_rejects_extra_field) ... ok
+test_unknown_prediction_id_cannot_inflate_score (test_project.PipelineTests.test_unknown_prediction_id_cannot_inflate_score) ... ok
+test_bool_is_not_a_number (test_project.RuleTests.test_bool_is_not_a_number) ... ok
+test_customer_claim_is_not_system_confirmation (test_project.RuleTests.test_customer_claim_is_not_system_confirmation) ... ok
+test_exception_can_resolve_missing_date (test_project.RuleTests.test_exception_can_resolve_missing_date) ... ok
+test_false_and_unknown_needs_no_question (test_project.RuleTests.test_false_and_unknown_needs_no_question) ... ok
+test_refund_boundary_is_inclusive (test_project.RuleTests.test_refund_boundary_is_inclusive) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.522s
+
+OK

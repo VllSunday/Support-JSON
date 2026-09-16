@@ -1,0 +1,80 @@
+{
+  "n": 108,
+  "received_predictions": 108,
+  "missing_predictions": 0,
+  "accuracy": {
+    "category": 0.7685185185185185,
+    "priority": 0.5925925925925926,
+    "sentiment": 0.75,
+    "action": 0.4074074074074074,
+    "recommended_action": 0.4074074074074074,
+    "human_escalation": 0.5
+  },
+  "field_only_accuracy": {
+    "category": 1.0,
+    "priority": 0.7777777777777778,
+    "sentiment": 0.9629629629629629,
+    "action": 0.4074074074074074,
+    "recommended_action": 0.4351851851851852,
+    "human_escalation": 0.6111111111111112
+  },
+  "json_parse_rate": 1.0,
+  "schema_and_invariants_rate": 0.7685185185185185,
+  "missing_info_set_accuracy": 0.5925925925925926,
+  "supported_rule_ids_set_accuracy": 0.6666666666666666,
+  "macro_f1": {
+    "category": {
+      "value": 0.859665427287999,
+      "labels_present_in_gold": [
+        "access",
+        "billing",
+        "cancellation",
+        "integration",
+        "product",
+        "refund",
+        "technical"
+      ]
+    },
+    "priority": {
+      "value": 0.7324740422484783,
+      "labels_present_in_gold": [
+        "critical",
+        "high",
+        "low",
+        "medium"
+      ]
+    }
+  },
+  "critical_recall": {
+    "value": 1.0,
+    "correct": 3,
+    "total": 3
+  },
+  "by_state": {
+    "conflict": {
+      "n": 27,
+      "action_accuracy": 0.0
+    },
+    "false": {
+      "n": 27,
+      "action_accuracy": 0.37037037037037035
+    },
+    "true": {
+      "n": 27,
+      "action_accuracy": 0.5925925925925926
+    },
+    "unknown": {
+      "n": 27,
+      "action_accuracy": 0.6666666666666666
+    }
+  },
+  "human_evaluation": {
+    "reviewed": 0,
+    "coverage": 0.0,
+    "hallucination_rate": null,
+    "mean_response_quality_1_to_5": null
+  },
+  "dataset_fingerprint": "8170f1c034d1cf07a18e676e8b00cb4397104d748a967f7de29e3c26b9121529",
+  "scoring_version": "0.4",
+  "note": "Strict accuracy: invalid or missing outputs fail all task fields. Field-only accuracy: each exact, correctly typed field is scored independently, even when other fields violate the contract. Human rates cover reviewed subset only; null means not measured. Reply exact match is not used."
+}

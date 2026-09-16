@@ -1,0 +1,12 @@
+{
+  "source": "User reported playing Fortnite while waiting for project runs; GPU snapshot observed locally",
+  "utc_observed": "2026-09-17T18:43:00Z",
+  "timestamp_precision": "Approximate minute, not an exact synchronized sample",
+  "observed_gpu_utilization_percent": 99,
+  "observed_gpu_memory_used_mib": 15827,
+  "observed_gpu_memory_total_mib": 16303,
+  "active_project_stage": "additional base four-shot evaluation; all three training runs and primary test comparison already completed",
+  "primary_benchmark_overlap_with_game": "Unknown: user did not specify when the game started",
+  "latency_interpretation": "Observed generation times in a shared desktop session, not isolated hardware throughput or a controlled latency comparison. Competing GPU applications may materially affect elapsed time.",
+  "accuracy_interpretation": "Frozen inputs, raw predictions, model selection and paired accuracy scoring are unchanged. No crash or corrupted checkpoint was observed. This does not certify exact numerical determinism across different device loads."
+}

@@ -1,0 +1,6 @@
+{
+ "reason": "User reported Fortnite FPS drop from 300 to 20. Model process dedicated GPU memory observed at 14837403648 bytes. Last snapshot had 16 rows; at stop 24 rows were flushed, with the third batch taking 180.939 seconds while the game was running.",
+ "primary_comparison": "Already complete; raw predictions and settings unchanged, both batch 8",
+ "additional_control": "Restart whole frozen 108-row suite with batch 4 and release unused CUDA cache after each batch. Preserve incomplete batch-8 outputs separately. No review of its reply quality or tuning of prompt/examples based on partial results.",
+ "game": "User asked to continue project instead of pausing for gaming. Game is not stopped or modified."
+}

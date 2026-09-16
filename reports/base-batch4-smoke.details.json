@@ -1,0 +1,94 @@
+[
+  {
+    "id": "686889eef8ad01a031c5",
+    "errors": [
+      "Additional properties are not allowed ('$schema', 'additionalProperties', 'properties', 'required', 'title', 'type' were unexpected)",
+      "'category' is a required property",
+      "'priority' is a required property",
+      "'sentiment' is a required property",
+      "'action' is a required property",
+      "'recommended_action' is a required property",
+      "'reply' is a required property",
+      "'missing_info' is a required property",
+      "'supported_rule_ids' is a required property",
+      "'human_escalation' is a required property"
+    ],
+    "field_correct": {
+      "category": false,
+      "priority": false,
+      "sentiment": false,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "c245ab5549146678dcf5",
+    "errors": [
+      "Additional properties are not allowed ('$schema', 'additionalProperties', 'properties', 'required', 'title', 'type', 'value' were unexpected)",
+      "'category' is a required property",
+      "'priority' is a required property",
+      "'sentiment' is a required property",
+      "'action' is a required property",
+      "'recommended_action' is a required property",
+      "'reply' is a required property",
+      "'missing_info' is a required property",
+      "'supported_rule_ids' is a required property",
+      "'human_escalation' is a required property"
+    ],
+    "field_correct": {
+      "category": false,
+      "priority": false,
+      "sentiment": false,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "0aeee33c5a6fa1e12d1c",
+    "errors": [
+      "Additional properties are not allowed ('$schema', 'additionalProperties', 'properties', 'required', 'title', 'type', 'value' were unexpected)",
+      "'category' is a required property",
+      "'priority' is a required property",
+      "'sentiment' is a required property",
+      "'action' is a required property",
+      "'recommended_action' is a required property",
+      "'reply' is a required property",
+      "'missing_info' is a required property",
+      "'supported_rule_ids' is a required property",
+      "'human_escalation' is a required property"
+    ],
+    "field_correct": {
+      "category": false,
+      "priority": false,
+      "sentiment": false,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  },
+  {
+    "id": "a572745e710a05f2a62b",
+    "errors": [
+      "Additional properties are not allowed ('$schema', 'additionalProperties', 'properties', 'required', 'title', 'type', 'value' were unexpected)",
+      "'category' is a required property",
+      "'priority' is a required property",
+      "'sentiment' is a required property",
+      "'action' is a required property",
+      "'recommended_action' is a required property",
+      "'reply' is a required property",
+      "'missing_info' is a required property",
+      "'supported_rule_ids' is a required property",
+      "'human_escalation' is a required property"
+    ],
+    "field_correct": {
+      "category": false,
+      "priority": false,
+      "sentiment": false,
+      "action": false,
+      "recommended_action": false,
+      "human_escalation": false
+    }
+  }
+]
