@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="310" viewBox="0 0 1200 310">
+  <rect width="1200" height="310" rx="20" fill="#0f1216"/>
+  <path d="M55 245H1145" stroke="#29333d"/>
+  <circle cx="64" cy="51" r="5" fill="#4fb3c4"/>
+  <text x="81" y="57" fill="#a7b1c0" font-family="Arial,sans-serif" font-size="15" letter-spacing="2">LOCAL AI · RUSSIAN SUPPORT · POLICY → JSON</text>
+  <text x="55" y="131" fill="#e6eaf0" font-family="Arial,sans-serif" font-size="62" font-weight="700">Support-JSON</text>
+  <text x="57" y="180" fill="#a7b1c0" font-family="Arial,sans-serif" font-size="22">Обращение, правила и факты → решение и черновик ответа</text>
+  <text x="57" y="215" fill="#4fb3c4" font-family="Arial,sans-serif" font-size="18">Qwen3.5-4B · LoRA · помощь оператору SaaS</text>
+  <rect x="1015" y="81" width="130" height="133" rx="12" fill="#1b222a" stroke="#33424e"/>
+  <text x="1038" y="162" fill="#4fb3c4" font-family="Consolas,monospace" font-size="54">{ }</text>
+  <text x="57" y="280" fill="#8a94a4" font-family="Arial,sans-serif" font-size="15">Открытые данные. Проверяемый эксперимент. Локальный интерфейс.</text>
+  <text x="1145" y="280" text-anchor="end" fill="#a7b1c0" font-family="Arial,sans-serif" font-size="15">A11Sunday / 2026</text>
+</svg>

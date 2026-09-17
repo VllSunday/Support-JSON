@@ -1,0 +1,25 @@
+{
+  "account": "A11Sunday",
+  "repos": {
+    "dataset": {
+      "repo_id": "A11Sunday/support-json-ru",
+      "created_by_this_release": true,
+      "commit": "280ce3631b7962c3bcb31df9e61d344f2a691111",
+      "public": true,
+      "url": "https://huggingface.co/datasets/A11Sunday/support-json-ru"
+    },
+    "model": {
+      "repo_id": "A11Sunday/support-json-qwen3.5-4b-lora",
+      "created_by_this_release": true,
+      "commit": "d66bdfd808e3b0021204db9568b4399aafb08001",
+      "public": true,
+      "url": "https://huggingface.co/A11Sunday/support-json-qwen3.5-4b-lora",
+      "final_verified_commit": "f39c0d7c2f949cf7bbace047d5caf80e20889bac"
+    }
+  },
+  "anonymous_adapter_download_sha256": "560421efb2ec593967bfcdf410042b4f0d9064907646090d95b16ca8bd946c76",
+  "anonymous_adapter_matches_training": true,
+  "delivery_verified": true,
+  "dataset_all_configs_anonymous_verified": true,
+  "dataset_viewer_processing_pending": true
+}

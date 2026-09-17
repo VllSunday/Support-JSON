@@ -1,0 +1,50 @@
+
+Creating parquet from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]
+Creating parquet from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 54.01ba/s]
+
+Generating train split: 0 examples [00:00, ? examples/s]
+Generating train split: 512 examples [00:00, 19663.44 examples/s]
+
+Creating parquet from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]
+Creating parquet from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 499.62ba/s]
+
+Generating train split: 0 examples [00:00, ? examples/s]
+Generating train split: 96 examples [00:00, 27356.01 examples/s]
+
+Creating parquet from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]
+Creating parquet from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 498.37ba/s]
+
+Generating train split: 0 examples [00:00, ? examples/s]
+Generating train split: 108 examples [00:00, 30863.58 examples/s]
+
+Creating parquet from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]
+Creating parquet from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 285.64ba/s]
+
+Generating train split: 0 examples [00:00, ? examples/s]
+Generating train split: 192 examples [00:00, 48006.34 examples/s]
+
+Creating parquet from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]
+Creating parquet from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 497.13ba/s]
+
+Generating train split: 0 examples [00:00, ? examples/s]
+Generating train split: 96 examples [00:00, 27439.91 examples/s]
+
+Creating parquet from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]
+Creating parquet from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 500.10ba/s]
+
+Generating train split: 0 examples [00:00, ? examples/s]
+Generating train split: 108 examples [00:00, 30796.44 examples/s]
+
+Creating parquet from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]
+Creating parquet from Arrow format: 100%|██████████| 1/1 [00:00<00:00, 90.77ba/s]
+
+Generating train split: 0 examples [00:00, ? examples/s]
+Generating train split: 1024 examples [00:00, 92984.79 examples/s]
+
+Creating parquet from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]
+Creating parquet from Arrow format: 100%|██████████| 1/1 [00:00<00:00,  7.57ba/s]
+Creating parquet from Arrow format: 100%|██████████| 1/1 [00:00<00:00,  7.54ba/s]
+
+Generating train split: 0 examples [00:00, ? examples/s]
+Generating train split: 10000 examples [00:00, 138734.48 examples/s]
+{"selected": {"train": 512, "validation": 96, "test": 108}, "pilot": {"train": 192, "validation": 96, "test": 108}, "expanded_trained": {"train": 1024}, "expanded_candidates": {"train": 10000}}

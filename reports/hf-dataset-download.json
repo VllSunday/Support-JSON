@@ -1,0 +1,34 @@
+{
+  "repo_id": "A11Sunday/support-json-ru",
+  "anonymous": true,
+  "configs": {
+    "selected": {
+      "splits": {
+        "train": 512,
+        "validation": 96,
+        "test": 108
+      },
+      "all_restored_contracts_valid": true
+    },
+    "pilot": {
+      "splits": {
+        "train": 192,
+        "validation": 96,
+        "test": 108
+      },
+      "all_restored_contracts_valid": true
+    },
+    "expanded_trained": {
+      "splits": {
+        "train": 1024
+      },
+      "all_restored_contracts_valid": true
+    },
+    "expanded_candidates": {
+      "splits": {
+        "train": 10000
+      },
+      "all_restored_contracts_valid": true
+    }
+  }
+}

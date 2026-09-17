@@ -1,0 +1,9 @@
+{
+  "presentation":"output/presentation/Support_JSON_Capstone-v2.pptx",
+  "method":"Imported the actual finalized PPTX and rendered every slide with artifact-tool; inspected all 10 full-size PNGs",
+  "inspected_slides":[1,2,3,4,5,6,7,8,9,10],
+  "native_table_owner_slides":[4,5,6,7],
+  "findings_resolved":"Shortened headings on slides 3 and 10 after inspecting the first version, providing clear space above the content. The retained screenshot deliberately illustrates a model error.",
+  "final_visual_check_passed":true,
+  "native_powerpoint_execution_verified":false
+}

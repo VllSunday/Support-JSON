@@ -1,0 +1,72 @@
+{
+  "repo_id": "A11Sunday/support-json-ru",
+  "license": "cc-by-4.0",
+  "author": "A11Sunday",
+  "configs": {
+    "selected": {
+      "train": {
+        "rows": 512,
+        "source": "data/diverse-v0.5/train.jsonl",
+        "source_sha256": "4b936a30064a6079a9516fc2c2613e62f8cfac6c1414f25c48ce81686ddbb6f4",
+        "parquet_sha256": "9a71c4e3b744b701cc10b3eecac9094aa0aae01bd7cc85245f5db3e097ad8aeb",
+        "all_rows_roundtrip_verified": true
+      },
+      "validation": {
+        "rows": 96,
+        "source": "data/pilot-v0.2/validation.jsonl",
+        "source_sha256": "cfa1979d776702fa238d471d935173127953c0b3229e0e5c457e6a2acf38d8d9",
+        "parquet_sha256": "45d7578fc294bf6921e5bfc8a1a8069ea79e7e380a1c5ec6210647f5f9ba7251",
+        "all_rows_roundtrip_verified": true
+      },
+      "test": {
+        "rows": 108,
+        "source": "data/pilot-v0.2/test.jsonl",
+        "source_sha256": "dd7f6eb443ef0e4c6eea4d5432b384fad1ba124561dad00c696ecfc9d9eb1109",
+        "parquet_sha256": "b88f412ea7ce6cda0beb6aea23d0b605dad9e86c971d69f88e184354e7071568",
+        "all_rows_roundtrip_verified": true
+      }
+    },
+    "pilot": {
+      "train": {
+        "rows": 192,
+        "source": "data/pilot-v0.2/train.jsonl",
+        "source_sha256": "79f193ab4d7e31447b6a876d06ca922163c508bf33d9649373be288087ac7f6b",
+        "parquet_sha256": "adb3a72888a89f75fc15f7bfba9cdf28fb3b74fb859248c14e6b03f73fecb673",
+        "all_rows_roundtrip_verified": true
+      },
+      "validation": {
+        "rows": 96,
+        "source": "data/pilot-v0.2/validation.jsonl",
+        "source_sha256": "cfa1979d776702fa238d471d935173127953c0b3229e0e5c457e6a2acf38d8d9",
+        "parquet_sha256": "45d7578fc294bf6921e5bfc8a1a8069ea79e7e380a1c5ec6210647f5f9ba7251",
+        "all_rows_roundtrip_verified": true
+      },
+      "test": {
+        "rows": 108,
+        "source": "data/pilot-v0.2/test.jsonl",
+        "source_sha256": "dd7f6eb443ef0e4c6eea4d5432b384fad1ba124561dad00c696ecfc9d9eb1109",
+        "parquet_sha256": "b88f412ea7ce6cda0beb6aea23d0b605dad9e86c971d69f88e184354e7071568",
+        "all_rows_roundtrip_verified": true
+      }
+    },
+    "expanded_trained": {
+      "train": {
+        "rows": 1024,
+        "source": "data/expanded-v0.4/train-1024.jsonl",
+        "source_sha256": "569f1d1663fa853f493663dcf743ff2c6020aee7b56cfc1fac9a9af74c1ec8b3",
+        "parquet_sha256": "6009806f3b25ae6ec6f89046716fbf4e14175236d95d2bb29a895f35e4a5e41a",
+        "all_rows_roundtrip_verified": true
+      }
+    },
+    "expanded_candidates": {
+      "train": {
+        "rows": 10000,
+        "source": "data/expanded-v0.4/train.jsonl",
+        "source_sha256": "6deda0df6e2554387fa8e98689eb31d6eec4125c23817320da2622fd5349779b",
+        "parquet_sha256": "0458f3f167ef06745c7899c18e5198840fdb612c689f41f846248aecd4d6e9e5",
+        "all_rows_roundtrip_verified": true
+      }
+    }
+  },
+  "training_snapshots_modified": false
+}
