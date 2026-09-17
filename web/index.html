@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support-JSON — разбор обращения по правилам компании</title>
+<style>
+/* OD-LAYOUT-PRIMITIVES v1 — structure only: display, flex/grid, overflow, wrapping, ratio.
+   Put this @layer first; product CSS outside the layer always wins. */
+@layer od-layout {
+  :where(.od-stack,.od-row,.od-row-top,.od-cluster,.od-grid,.od-field,.od-stat,.od-cell,.od-tile) > :where(*) { min-width: 0; }
+
+  /* containers */
+  .od-stack   { display: flex; flex-direction: column; gap: var(--od-gap, 8px); }
+  .od-row     { display: flex; align-items: center; gap: var(--od-gap, 8px); }
+  .od-row-top { display: flex; align-items: flex-start; gap: var(--od-gap, 8px); }
+  .od-cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--od-gap, 8px); }
+  .od-fill    { flex: 1 1 0; min-width: 0; }
+  .od-fixed   { flex: none; }
+  .od-grid    { display: grid; gap: var(--od-gap, 12px); grid-template-columns: repeat(var(--od-cols, 3), minmax(0, 1fr)); }
+
+  /* stacked information: each piece is its own line — never sibling inline spans */
+  .od-stat, .od-field, .od-cell { display: grid; gap: var(--od-gap, 2px); }
+  :where(.od-stat,.od-field,.od-cell) > :where(*) { display: block; }
+  .od-tile { display: grid; grid-template-rows: auto 1fr; }
+  :where(.od-tile) > :where(*) { display: block; }
+
+  /* media keeps its intrinsic ratio by default; never a distorted or cropped
+     cover by accident. height:auto lets the ratio win over an <img height="…">
+     attribute. Cropping to a uniform box is an explicit opt-in: set --od-ratio
+     AND add .od-media-cover together (per the core rule, only where a crop is
+     deliberate — tile thumbs, decorative fills — never on full-frame content). */
+  .od-media { display: block; width: 100%; height: auto; aspect-ratio: var(--od-ratio, auto); }
+  .od-media-cover { object-fit: cover; }
+
+  /* data text only — authored copy is rewritten to its budget instead */
+  .od-truncate { display: block; max-width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .od-clamp-2, .od-clamp-3 { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+  .od-clamp-2 { -webkit-line-clamp: 2; }
+  .od-clamp-3 { -webkit-line-clamp: 3; }
+  .od-lines-2 { min-height: calc(2 * 1.4em); }   /* block-level reservation for a shared baseline */
+  .od-nowrap  { white-space: nowrap; }           /* 数字+单位 · 价格+起 · 日期+星期 */
+  .od-keep    { word-break: keep-all; overflow-wrap: anywhere; } /* CJK labels break at spaces / <wbr> first */
+
+  /* screen skeleton (optional): bars take their own space, the middle scrolls — no padding guessed for chrome */
+  .od-screen { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; }
+  .od-scroll { overflow-y: auto; overscroll-behavior: contain; min-height: 0; }
+
+  /* horizontal rail: the next item peeks at the edge; trailing room survives overflow */
+  .od-rail { display: flex; gap: var(--od-gap, 8px); overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
+             padding-inline: var(--od-rail-pad, 16px); scroll-padding-inline: var(--od-rail-pad, 16px); }
+  .od-rail::-webkit-scrollbar { display: none; }
+  :where(.od-rail) > :where(*) { flex: none; scroll-snap-align: start; }
+  :where(.od-rail) > :where(:last-child) { margin-inline-end: var(--od-rail-pad, 16px); }
+
+  .od-spacer { flex: none; visibility: hidden; pointer-events: none; }
+  .od-touch  { min-width: 44px; min-height: 44px; }
+}
+/* /OD-LAYOUT-PRIMITIVES v1 */
+
+/* ---------- Шрифты (локальные файлы, без внешних ссылок) ---------- */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;
+  src:url(assets/fonts/plex-sans-cyrillic.woff2) format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;
+  src:url(assets/fonts/plex-sans-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;
+  src:url(assets/fonts/plex-sans-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:swap;
+  src:url(assets/fonts/plex-sans-cyrillic.woff2) format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-stretch:100%;font-display:swap;
+  src:url(assets/fonts/plex-sans-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;
+  src:url(assets/fonts/plex-sans-cyrillic.woff2) format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;
+  src:url(assets/fonts/plex-sans-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
+  src:url(assets/fonts/plex-mono-400-cyrillic.woff2) format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
+  src:url(assets/fonts/plex-mono-400-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;
+  src:url(assets/fonts/plex-mono-500-cyrillic.woff2) format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;
+  src:url(assets/fonts/plex-mono-500-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+
+/* ---------- Токены ---------- */
+:root{
+  --bg:#0F1216;
+  --surface-1:#151A20;
+  --surface-2:#1B222A;
+  --surface-3:#222B35;
+  --border:rgba(255,255,255,.09);
+  --border-strong:rgba(255,255,255,.17);
+  --text:#E6EAF0;
+  --text-2:#A7B1C0;
+  --text-3:#8A94A4;
+  --accent:#4FB3C4;
+  --accent-soft:rgba(79,179,196,.14);
+  --accent-line:rgba(79,179,196,.45);
+  --warn:#D9A441;
+  --warn-soft:rgba(217,164,65,.13);
+  --danger:#E8776A;
+  --danger-soft:rgba(232,119,106,.13);
+  --ok:#72C193;
+
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:20px;
+  --s-6:24px; --s-7:32px; --s-8:40px; --s-9:56px;
+
+  --r-1:6px; --r-2:10px; --r-pill:999px;
+
+  --fs-micro:12px; --fs-cap:13px; --fs-sm:14px; --fs-base:16px;
+  --fs-md:17px; --fs-lg:18px; --fs-xl:20px; --fs-2xl:24px;
+  --fs-mono:15px;
+
+  --font-sans:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,'Cascadia Mono',Consolas,monospace;
+
+  --dur-in:200ms; --dur-out:140ms;
+  --ease-in:cubic-bezier(.4,0,1,1); --ease-out:cubic-bezier(0,0,.2,1);
+  --maxw:1440px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--font-sans);font-size:var(--fs-base);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{margin:0;font-weight:600;line-height:1.3;letter-spacing:-.005em}
+p{margin:0}
+ul,ol,dl,dd{margin:0;padding:0}
+li{list-style:none}
+code,pre{font-family:var(--font-mono)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:var(--r-1)}
+
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.hint{color:var(--text-3);font-size:var(--fs-cap);line-height:1.5}
+.ico{width:16px;height:16px;flex:none;display:block}
+
+/* ---------- Верхняя панель ---------- */
+.topbar{
+  position:sticky;top:0;z-index:20;
+  background:rgba(15,18,22,.94);
+  border-bottom:1px solid var(--border);
+}
+@supports (backdrop-filter:blur(6px)){.topbar{backdrop-filter:blur(6px)}}
+.topbar__inner{
+  --od-gap:var(--s-4);
+  max-width:var(--maxw);margin:0 auto;
+  padding:var(--s-3) var(--s-6);
+  flex-wrap:wrap;
+}
+.brand{--od-gap:1px}
+.brand__name{font-size:var(--fs-lg);font-weight:600;letter-spacing:-.01em}
+.brand__sub{font-size:var(--fs-cap);color:var(--text-3)}
+.model-badge{
+  display:inline-flex;align-items:center;gap:var(--s-2);
+  padding:5px var(--s-3);border:1px solid var(--border);border-radius:var(--r-pill);
+  font-size:var(--fs-micro);color:var(--text-2);background:var(--surface-1);
+}
+.model-badge__dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+
+/* ---------- Сетка рабочего места ---------- */
+.workspace{
+  max-width:var(--maxw);margin:0 auto;
+  padding:var(--s-6);
+  display:grid;gap:var(--s-6);
+  grid-template-columns:minmax(0,1fr);
+  align-items:start;
+}
+@media (min-width:1024px){
+  .workspace{grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);gap:var(--s-7);padding:var(--s-7) var(--s-6)}
+}
+@media (max-width:520px){
+  .workspace{padding:var(--s-4)}
+  .topbar__inner{padding:var(--s-3) var(--s-4)}
+}
+
+.pane{
+  background:var(--surface-1);
+  border:1px solid var(--border);
+  border-radius:var(--r-2);
+}
+.pane__head{--od-gap:var(--s-3);padding:var(--s-5) var(--s-5) var(--s-4);flex-wrap:wrap}
+.pane__head h2{font-size:var(--fs-xl)}
+.pane__head .hint{width:100%}
+.block{padding:var(--s-5);border-top:1px solid var(--border);margin:0;border-inline:0;border-bottom:0}
+fieldset.block{min-width:0}
+.block:first-of-type{border-top:0}
+.block__legend,.block__title{
+  display:block;padding:0;font-size:var(--fs-cap);font-weight:500;color:var(--text-2);
+  margin-bottom:var(--s-2);letter-spacing:.01em;
+}
+.field-label{display:block;font-size:var(--fs-cap);font-weight:500;color:var(--text-2);margin-bottom:var(--s-2)}
+.field-label .req{color:var(--accent);margin-left:2px}
+
+/* ---------- Примеры ---------- */
+.chips{--od-gap:var(--s-2)}
+.chip{display:inline-flex;position:relative;cursor:pointer}
+.chip input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.chip span{
+  display:inline-flex;align-items:center;gap:var(--s-2);
+  min-height:40px;padding:0 var(--s-4);
+  border:1px solid var(--border-strong);border-radius:var(--r-pill);
+  background:var(--surface-2);color:var(--text-2);
+  font-size:var(--fs-sm);white-space:nowrap;
+  transition:border-color var(--dur-in) var(--ease-out),color var(--dur-in) var(--ease-out),background var(--dur-in) var(--ease-out);
+}
+.chip span::before{
+  content:"";width:8px;height:8px;border-radius:50%;flex:none;
+  border:1.5px solid var(--text-3);background:transparent;
+}
+@media (hover:hover){.chip:hover span{border-color:var(--text-3);color:var(--text)}}
+.chip input:checked+span{
+  border-color:var(--accent-line);background:var(--accent-soft);color:var(--text);font-weight:500;
+}
+.chip input:checked+span::before{border-color:var(--accent);background:var(--accent)}
+.chip input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:520px){.chip span{min-height:44px}}
+
+/* ---------- Поля ввода ---------- */
+.input,.textarea{
+  width:100%;display:block;
+  background:var(--surface-2);color:var(--text);
+  border:1px solid var(--border-strong);border-radius:var(--r-1);
+  padding:var(--s-3) var(--s-4);
+  font-family:inherit;font-size:var(--fs-base);line-height:1.6;
+  transition:border-color var(--dur-in) var(--ease-out),background var(--dur-in) var(--ease-out);
+}
+.textarea{resize:vertical}
+.textarea::placeholder{color:var(--text-3)}
+.textarea:focus-visible,.input:focus-visible{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent-line)}
+.textarea--appeal{min-height:150px}
+.textarea--rules{min-height:190px;font-family:var(--font-mono);font-size:var(--fs-mono);line-height:1.65;white-space:pre;overflow-wrap:normal;overflow-x:auto}
+.textarea[aria-invalid="true"]{border-color:var(--danger)}
+.field-error{
+  display:flex;gap:var(--s-2);align-items:flex-start;
+  margin-top:var(--s-2);color:var(--danger);font-size:var(--fs-cap);line-height:1.5;
+}
+.field-error .ico{margin-top:2px}
+.field-meta{--od-gap:var(--s-3);margin-top:var(--s-2)}
+
+/* ---------- Раскрываемые разделы ---------- */
+details.section{border-top:1px solid var(--border)}
+details.section>summary{
+  display:flex;align-items:center;gap:var(--s-2);
+  padding:var(--s-4) var(--s-5);cursor:pointer;
+  font-size:var(--fs-base);font-weight:500;color:var(--text);
+  list-style:none;min-height:52px;
+}
+details.section>summary::-webkit-details-marker{display:none}
+details.section>summary .chev{color:var(--text-3);transition:transform var(--dur-in) var(--ease-out)}
+details.section[open]>summary .chev{transform:rotate(90deg)}
+details.section>summary .count{
+  margin-left:auto;font-size:var(--fs-micro);color:var(--text-3);
+  border:1px solid var(--border);border-radius:var(--r-pill);padding:2px 10px;
+}
+@media (hover:hover){details.section>summary:hover{background:var(--surface-2)}}
+.section__body{padding:0 var(--s-5) var(--s-5)}
+
+/* ---------- Факты ---------- */
+.facts{--od-gap:0}
+.fact{--od-gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)}
+.fact:first-child{border-top:0;padding-top:0}
+.fact__body{--od-gap:2px}
+.fact__key{font-size:var(--fs-sm);color:var(--text-3);letter-spacing:.01em}
+.fact__value{font-size:var(--fs-base);color:var(--text);overflow-wrap:anywhere}
+.fact__value--null{color:var(--text-3);font-style:italic}
+.badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:3px 10px;border-radius:var(--r-pill);
+  font-size:var(--fs-micro);line-height:1.5;
+}
+.badge::before{content:"";width:7px;height:7px;flex:none}
+.badge--user{border:1px solid var(--border-strong);color:var(--text-2);background:transparent}
+.badge--user::before{border:1.5px solid var(--text-2);border-radius:50%}
+.badge--tool{border:1px solid var(--accent-line);color:var(--accent);background:var(--accent-soft)}
+.badge--tool::before{background:var(--accent);border-radius:2px}
+.origin-legend{--od-gap:var(--s-3);margin-top:var(--s-4);padding-top:var(--s-3);border-top:1px solid var(--border)}
+.origin-legend .hint{flex:1 1 220px}
+
+/* ---------- История ---------- */
+.msgs{--od-gap:var(--s-3);display:flex;flex-direction:column}
+.msg{--od-gap:3px;padding:var(--s-3) var(--s-4);border-radius:var(--r-1);background:var(--surface-2)}
+.msg--assistant{background:transparent;border:1px solid var(--border)}
+.msg__role{font-size:var(--fs-micro);color:var(--text-3);letter-spacing:.02em}
+.msg__text{font-size:var(--fs-base);color:var(--text-2);line-height:1.6}
+
+/* ---------- Кнопки ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:var(--s-2);
+  min-height:44px;padding:0 var(--s-5);
+  border-radius:var(--r-1);border:1px solid transparent;
+  background:var(--surface-3);color:var(--text);
+  font-size:var(--fs-base);font-weight:500;cursor:pointer;
+  transition:background var(--dur-in) var(--ease-out),border-color var(--dur-in) var(--ease-out),opacity var(--dur-in) var(--ease-out);
+}
+.btn--primary{background:var(--accent);color:#08171B;font-weight:600}
+@media (hover:hover){
+  .btn--primary:hover:not(:disabled){background:#63C2D2}
+  .btn--ghost:hover:not(:disabled){background:var(--surface-3);border-color:var(--border-strong)}
+  .btn--quiet:hover:not(:disabled){background:var(--surface-2);border-color:var(--border-strong)}
+}
+.btn--ghost{background:transparent;border-color:var(--border-strong);color:var(--text-2)}
+.btn--quiet{background:transparent;border-color:var(--border);color:var(--text-2)}
+.btn--sm{min-height:36px;padding:0 var(--s-3);font-size:var(--fs-cap)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.is-copied{color:var(--ok);border-color:var(--ok)}
+
+.run-row{--od-gap:var(--s-4);padding:var(--s-5);border-top:1px solid var(--border);flex-wrap:wrap}
+.run-status{font-size:var(--fs-cap);color:var(--text-3);line-height:1.5;flex:1 1 220px}
+.run-status--busy{color:var(--text-2)}
+.run-status--error{color:var(--danger)}
+.spin{
+  width:14px;height:14px;border-radius:50%;flex:none;display:inline-block;vertical-align:-2px;margin-right:6px;
+  border:2px solid var(--border-strong);border-top-color:var(--accent);
+  animation:spin 900ms linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- Область результата ---------- */
+.result-pane{position:relative}
+@media (min-width:1024px){.result-pane{position:sticky;top:88px}}
+.timing{font-size:var(--fs-micro);color:var(--text-3)}
+.notice-check{
+  --od-gap:var(--s-2);
+  display:flex;align-items:flex-start;gap:var(--s-2);
+  margin:0 var(--s-5) var(--s-5);padding:var(--s-3) var(--s-4);
+  background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-1);
+  font-size:var(--fs-cap);color:var(--text-2);
+}
+.notice-check .ico{margin-top:2px;color:var(--text-3)}
+
+.banner{margin:0 var(--s-5) var(--s-5);padding:var(--s-4);border-radius:var(--r-1);border:1px solid var(--border)}
+.banner h3{font-size:var(--fs-md);margin-bottom:var(--s-2)}
+.banner p+p{margin-top:var(--s-2)}
+.banner--stale{background:var(--warn-soft);border-color:rgba(217,164,65,.4);color:var(--warn)}
+.banner--stale p{color:#EBC584;font-size:var(--fs-sm)}
+.banner--error{background:var(--danger-soft);border-color:rgba(232,119,106,.42)}
+.banner--error h3{color:var(--danger)}
+.banner--error p{color:var(--text-2);font-size:var(--fs-sm)}
+.banner__head{--od-gap:var(--s-2);align-items:flex-start;display:flex}
+.banner__head .ico{margin-top:3px;flex:none}
+.banner__actions{--od-gap:var(--s-2);margin-top:var(--s-4)}
+.raw-out{
+  margin-top:var(--s-3);padding:var(--s-3);border-radius:var(--r-1);
+  background:#12161B;border:1px solid var(--border);
+  font-size:var(--fs-mono);color:var(--text-2);
+  white-space:pre-wrap;overflow-wrap:anywhere;
+}
+
+.empty{padding:var(--s-6) var(--s-5) var(--s-8);text-align:left;border-top:1px solid var(--border)}
+.empty__title{font-size:var(--fs-md);color:var(--text-2);margin-bottom:var(--s-2)}
+.empty__hint{font-size:var(--fs-sm);color:var(--text-3);max-width:46ch}
+.empty__frame{
+  margin-top:var(--s-5);height:112px;border:1px dashed var(--border-strong);border-radius:var(--r-1);
+}
+
+.skeleton{padding:var(--s-5);border-top:1px solid var(--border)}
+.sk{background:var(--surface-2);border-radius:var(--r-1);animation:pulse 1200ms var(--ease-out) infinite alternate}
+@keyframes pulse{from{opacity:.55}to{opacity:1}}
+.sk--row{height:52px}
+.sk--line{height:14px;margin-top:var(--s-3)}
+.sk--line.w70{max-width:70%}
+.sk--line.w45{max-width:45%}
+.sk--block{height:132px;margin-top:var(--s-5)}
+
+/* сводка решения */
+.result-body{padding:0 var(--s-5) var(--s-5)}
+.group{padding-top:var(--s-5);border-top:1px solid var(--border)}
+.group:first-child{border-top:0;padding-top:0}
+.group__title{font-size:var(--fs-cap);font-weight:500;color:var(--text-3);margin-bottom:var(--s-3);letter-spacing:.01em}
+.summary-signals{--od-cols:2;--od-gap:var(--s-3)}
+.summary-class{--od-cols:3;--od-gap:var(--s-3);margin-top:var(--s-4)}
+@media (max-width:640px){.summary-class{--od-cols:1}}
+.stat{--od-gap:3px}
+.stat dt{font-size:var(--fs-micro);color:var(--text-3);letter-spacing:.02em}
+.stat dd{font-size:var(--fs-base);color:var(--text);font-weight:500}
+.stat--signal dd{display:flex;align-items:center;gap:var(--s-2)}
+.stat--signal dd::before{content:"";width:9px;height:9px;border-radius:2px;flex:none;background:var(--text-3)}
+.stat--signal[data-level="critical"] dd::before,.stat--signal[data-level="yes"] dd::before{background:var(--danger)}
+.stat--signal[data-level="high"] dd::before{background:var(--warn)}
+.stat--signal[data-level="medium"] dd::before{background:var(--accent)}
+.stat--signal[data-level="no"] dd::before{background:transparent;border:1.5px solid var(--text-3)}
+.stat--sentiment dd{
+  display:inline-flex;align-items:center;font-weight:400;
+  border:1px solid var(--border-strong);border-radius:var(--r-pill);
+  padding:2px 12px;font-size:var(--fs-sm);color:var(--text-2);
+}
+
+.action-box{
+  margin-top:var(--s-4);padding:var(--s-4);
+  border:1px solid var(--border-strong);border-radius:var(--r-1);background:var(--surface-2);
+}
+.action-box dt{font-size:var(--fs-micro);color:var(--text-3);margin-bottom:3px}
+.action-box dd{font-size:var(--fs-md);font-weight:500;line-height:1.5}
+.action-box .hint{margin-top:var(--s-2)}
+
+/* ответ клиенту — главный акцент */
+.reply{
+  margin-top:var(--s-5);
+  border:1px solid var(--accent-line);border-radius:var(--r-2);
+  background:var(--surface-2);overflow:hidden;
+}
+.reply__head{--od-gap:var(--s-3);padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--border);background:var(--accent-soft)}
+.reply__head h3{font-size:var(--fs-md)}
+.reply__text{padding:var(--s-5) var(--s-5) var(--s-6)}
+.reply__text p{font-size:var(--fs-md);line-height:1.7;max-width:68ch;overflow-wrap:anywhere}
+.reply__text p+p{margin-top:var(--s-4)}
+
+.list-marked li{position:relative;padding-left:var(--s-5);font-size:var(--fs-base);color:var(--text-2);line-height:1.6}
+.list-marked li+li{margin-top:var(--s-2)}
+.list-marked li::before{
+  content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:50%;
+  border:1.5px solid var(--warn);
+}
+.rules-used li{--od-gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)}
+.rules-used li:first-child{border-top:0;padding-top:0}
+.rule-id{
+  font-size:var(--fs-cap);color:var(--accent);
+  border:1px solid var(--accent-line);border-radius:var(--r-1);
+  padding:2px 8px;background:var(--accent-soft);
+}
+.rule-text{font-size:var(--fs-base);color:var(--text-2);line-height:1.6;overflow-wrap:anywhere}
+.rule-text--missing{color:var(--warn);font-style:italic}
+
+/* JSON */
+.json-block{border-top:1px solid var(--border);margin-top:var(--s-5)}
+.json-block>summary::-webkit-details-marker{display:none}
+@media (hover:hover){.json-block>summary:hover{color:var(--accent)}}
+.json-tools{--od-gap:var(--s-3);padding-bottom:var(--s-3)}
+.json{
+  margin:0;padding:var(--s-4);border-radius:var(--r-1);
+  background:#11151A;border:1px solid var(--border);
+  font-size:var(--fs-mono);line-height:1.7;color:var(--text-2);
+  white-space:pre-wrap;overflow-wrap:anywhere;tab-size:2;
+}
+.json-key{color:#8FD0DA}
+.json-str{color:#C6D3E2}
+.json-num{color:#E0B978}
+.json-bool{color:#9FD2A8}
+.json-null{color:#8A94A4;font-style:italic}
+
+/* неактуальный результат */
+.is-stale .result-body,.is-stale .empty{opacity:.5}
+.is-stale .reply{border-color:var(--border)}
+
+/* подвал */
+.page-foot{
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--s-6) var(--s-8);
+  --od-gap:var(--s-3);
+}
+.page-foot .hint{flex:1 1 260px}
+.spec-link{color:var(--text-2);font-size:var(--fs-cap);text-decoration:none;border-bottom:1px solid var(--border-strong);padding-bottom:1px}
+@media (hover:hover){.spec-link:hover{color:var(--accent);border-color:var(--accent-line)}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+
+[hidden]{display:none!important}
+html{color-scheme:dark}
+.example-select{min-height:44px;margin-top:8px}
+.context-editor{margin-top:20px}.context-editor summary{cursor:pointer;color:var(--accent);padding:8px 0;min-height:44px}
+.context-editor label{margin-top:12px}.context-json{font-family:var(--font-mono);font-size:14px;white-space:pre;overflow:auto;margin-top:8px}
+.fact__value{overflow-wrap:anywhere}.fact__value--unknown{color:var(--text-3);font-style:italic}
+.stat--signal[data-escalate="true"] dd::before{background:var(--danger)}
+.stat--signal[data-escalate="false"] dd::before{background:transparent;border:1.5px solid var(--text-3)}
+.json-key{color:#8FD0DA}.json-string{color:#C6D3E2}.json-num{color:#E0B978}.json-bool{color:#9FD2A8}.json-null{color:var(--text-3);font-style:italic}
+.btn:disabled{cursor:not-allowed;opacity:.55}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__inner od-row">
+    <div class="brand od-field od-fixed">
+      <h1 class="brand__name">Support-JSON</h1>
+      <span class="brand__sub">Разбор обращения по правилам компании</span>
+    </div>
+    <span class="od-fill" aria-hidden="true"></span>
+    <span class="model-badge od-fixed od-nowrap">
+      <span class="model-badge__dot" aria-hidden="true"></span><span id="modelMode">Локальная модель</span>
+    </span>
+  </div>
+</header>
+
+<main class="workspace">
+
+  <!-- ====================== ОБРАЩЕНИЕ И КОНТЕКСТ ====================== -->
+  <section class="pane" aria-labelledby="h-input">
+    <div class="pane__head od-row">
+      <h2 id="h-input" class="od-fill">Обращение и контекст</h2>
+      <p class="hint">Правила и контекст передаются модели вместе с каждым обращением.</p>
+    </div>
+
+    <fieldset class="block">
+      <legend class="block__legend">Синтетический пример</legend>
+      <div class="chips od-cluster" id="exampleChips"></div>
+      <label class="field-label" for="example" style="margin-top:16px">Все сценарии</label><select class="textarea example-select" id="example"><option>Загрузка примеров…</option></select>
+      <p class="hint" id="exampleHint" style="margin-top:12px"></p>
+    </fieldset>
+
+    <div class="block">
+      <label class="field-label" for="appeal">Что написал клиент</label>
+      <textarea class="textarea textarea--appeal" id="appeal" placeholder="Вставьте или введите текст обращения"></textarea>
+      <p class="hint" style="margin-top:8px">Вымышленные обращения без персональных данных. Текст можно править вручную.</p>
+    </div>
+
+    <div class="block">
+      <label class="field-label" for="rules">Правила компании <span class="hint" style="font-weight:400">— JSON, у каждого правила <code>id</code> и <code>text</code></span></label>
+      <textarea class="textarea textarea--rules" id="rules" spellcheck="false" aria-describedby="rulesHint"></textarea>
+      <div class="field-error" id="rulesError" hidden>
+        <svg class="ico" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 5.5v3.25M8 11.25h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M6.9 2.4 1.9 11.2A1.25 1.25 0 0 0 3 13.1h10a1.25 1.25 0 0 0 1.1-1.9L9.1 2.4a1.25 1.25 0 0 0-2.2 0Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span id="rulesErrorText"></span>
+      </div>
+      <div class="field-meta od-row">
+        <p class="hint od-fill" id="rulesHint">Измените текст правила и разберите обращение заново, чтобы сравнить решение.</p>
+        <span class="hint od-fixed od-nowrap" id="rulesCount">6 правил</span>
+      </div>
+    </div>
+
+    <details class="section" id="factsSection">
+      <summary>
+        <svg class="ico chev" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Факты
+        <span class="count" id="factsCount">5</span>
+      </summary>
+      <div class="section__body">
+        <ul class="facts" id="factsList"></ul>
+        <div class="origin-legend od-cluster">
+          <span class="badge badge--user od-fixed">слова клиента</span>
+          <p class="hint">Со слов клиента, системой не подтверждено.</p>
+          <span class="badge badge--tool od-fixed">система</span>
+          <p class="hint">Наблюдение сервиса. Значение null означает, что факт неизвестен.</p>
+        </div>
+        <details class="context-editor"><summary>Редактировать факты в JSON</summary><label class="field-label" for="factsJson">Факты: key, value и origin</label><textarea class="textarea context-json" id="factsJson" rows="7" spellcheck="false">[]</textarea><p class="hint">origin: user_report — слова клиента; tool_observation — данные системы. Неизвестный факт: null.</p></details>
+      </div>
+    </details>
+
+    <details class="section" id="historySection">
+      <summary>
+        <svg class="ico chev" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        История переписки
+        <span class="count" id="historyCount">2</span>
+      </summary>
+      <div class="section__body">
+        <ul class="msgs" id="historyList"></ul>
+        <p class="hint" style="margin-top:16px">История относится к текущему обращению. При изменении текста прежние факты и история сбрасываются.</p><details class="context-editor"><summary>Редактировать историю в JSON</summary><label class="field-label" for="historyJson">Сообщения: role и content</label><textarea class="textarea context-json" id="historyJson" rows="5" spellcheck="false">[]</textarea><p class="hint">role: user или assistant. История не подтверждает факты из системы.</p></details>
+      </div>
+    </details>
+
+    <div class="run-row od-row">
+      <button class="btn btn--primary od-fixed" id="runBtn" type="button">Разобрать обращение</button>
+      <p class="run-status" id="runStatus" role="status" aria-live="polite">Готово к разбору. Первый запрос может включать загрузку модели.</p>
+    </div>
+  </section>
+
+  <!-- ====================== ПРЕДЛОЖЕНИЕ ОПЕРАТОРУ ====================== -->
+  <section class="pane result-pane" id="resultPane" aria-labelledby="h-result">
+    <div class="pane__head od-row">
+      <h2 id="h-result" class="od-fill">Предложение оператору</h2>
+      <span class="timing od-fixed od-nowrap" id="timing" hidden></span>
+    </div>
+
+    <p class="notice-check">
+      <svg class="ico" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.75 2.75 3.6v4.1c0 2.9 2.1 5.4 5.25 6.55 3.15-1.15 5.25-3.65 5.25-6.55V3.6L8 1.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M5.9 7.9 7.4 9.4l2.9-2.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Проверьте ответ перед отправкой клиенту. Возвраты, отмены и изменения аккаунта выполняет оператор — приложение их только предлагает.</span>
+    </p>
+
+    <div class="banner banner--stale" id="staleBanner" hidden role="status">
+      <div class="banner__head">
+        <svg class="ico" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 4.5V8l2.25 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.5"/></svg>
+        <div>
+          <h3>Решение устарело</h3>
+          <p>Входные данные изменились после разбора. Копирование черновика отключено — нажмите «Разобрать обращение», чтобы получить актуальное решение.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner banner--error" id="errorState" hidden role="alert">
+      <div class="banner__head">
+        <svg class="ico" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="color:var(--danger)"><path d="M8 5.5v3.25M8 11.25h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M6.9 2.4 1.9 11.2A1.25 1.25 0 0 0 3 13.1h10a1.25 1.25 0 0 0 1.1-1.9L9.1 2.4a1.25 1.25 0 0 0-2.2 0Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <div>
+          <h3 id="errorTitle">Разбор не выполнен</h3>
+          <p id="errorReason"></p>
+          <p><strong style="color:var(--text)">Что сделать:</strong> проверьте входные данные. Если ошибка повторяется, изучите журнал сервера или передайте обращение оператору. Невалидный ответ не используется как черновик.</p>
+          <div class="banner__actions od-cluster">
+            <button class="btn btn--sm btn--ghost" type="button" id="retryBtn">Повторить разбор</button>
+            <button class="btn btn--sm btn--quiet" type="button" id="rawToggle" aria-expanded="false" aria-controls="rawOut">Показать сырой ответ</button>
+          </div>
+          <pre class="raw-out" id="rawOut" hidden></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="empty" id="emptyState">
+      <p class="empty__title">Решение появится здесь</p>
+      <p class="empty__hint">Выберите синтетический пример или введите обращение, проверьте правила и контекст, затем нажмите «Разобрать обращение».</p>
+      <div class="empty__frame" aria-hidden="true"></div>
+    </div>
+
+    <div class="skeleton" id="loadingState" hidden aria-hidden="true">
+      <div class="sk sk--row"></div>
+      <div class="sk sk--line w70"></div>
+      <div class="sk sk--line w45"></div>
+      <div class="sk sk--block"></div>
+    </div>
+
+    <div class="result-body" id="resultBody" hidden>
+      <div class="group">
+        <p class="group__title">Срочность и маршрут</p>
+        <dl class="summary-signals od-grid">
+          <div class="stat od-stat stat--signal" id="statPriority"><dt>Приоритет</dt><dd id="valPriority">—</dd></div>
+          <div class="stat od-stat stat--signal" id="statHandoff"><dt>Передача человеку</dt><dd id="valHandoff">—</dd></div>
+        </dl>
+        <dl class="summary-class od-grid">
+          <div class="stat od-stat"><dt>Категория</dt><dd id="valCategory">—</dd></div>
+          <div class="stat od-stat stat--sentiment"><dt>Настроение клиента</dt><dd id="valSentiment">—</dd></div>
+          <div class="stat od-stat"><dt>Стратегия</dt><dd id="valStrategy">—</dd></div>
+        </dl>
+        <dl class="action-box">
+          <dt>Рекомендуемое действие</dt>
+          <dd id="valAction">—</dd>
+          <dd class="hint" id="actionNote">Действие выполняет оператор вручную.</dd>
+        </dl>
+      </div>
+
+      <section class="reply" aria-labelledby="h-reply">
+        <div class="reply__head od-row">
+          <h3 id="h-reply" class="od-fill">Ответ клиенту</h3>
+          <button class="btn btn--sm btn--ghost od-fixed" type="button" id="copyReply" data-copy="reply">
+            <svg class="ico" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5.25" y="5.25" width="8" height="8" rx="1.75" stroke="currentColor" stroke-width="1.5"/><path d="M10.75 5.25V4A1.75 1.75 0 0 0 9 2.25H4A1.75 1.75 0 0 0 2.25 4v5c0 .97.78 1.75 1.75 1.75h1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Копировать</span>
+          </button>
+        </div>
+        <div class="reply__text" id="replyText"></div>
+      </section>
+
+      <div class="group" id="missingBlock" style="margin-top:20px" hidden>
+        <p class="group__title">Нужно уточнить</p>
+        <ul class="list-marked" id="missingList"></ul>
+      </div>
+
+      <div class="group" style="margin-top:20px">
+        <p class="group__title">Основание решения</p>
+        <ul class="rules-used" id="rulesUsed"></ul>
+      </div>
+
+      <details class="json-block" id="jsonBlock">
+        <summary style="display:flex;align-items:center;gap:8px;padding:16px 0;cursor:pointer;list-style:none;font-weight:500">
+          <svg class="ico chev" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="color:var(--text-3);transition:transform 200ms"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          JSON модели
+        </summary>
+        <div class="json-tools od-row">
+          <span class="hint od-fill">JSON с отступами и переносами строк. Значения полей сохранены.</span>
+          <button class="btn btn--sm btn--quiet od-fixed" type="button" id="copyJson" data-copy="json">
+            <svg class="ico" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5.25" y="5.25" width="8" height="8" rx="1.75" stroke="currentColor" stroke-width="1.5"/><path d="M10.75 5.25V4A1.75 1.75 0 0 0 9 2.25H4A1.75 1.75 0 0 0 2.25 4v5c0 .97.78 1.75 1.75 1.75h1.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Копировать</span>
+          </button>
+        </div>
+        <pre class="json"><code id="jsonOut"></code></pre>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="page-foot od-row">
+  <p class="hint od-fill">Локальный пилот для помощи оператору. Ответы генерирует модель; проверьте их по правилам перед отправкой.</p>
+  <span class="hint od-fixed">SaaS · Support-JSON</span>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

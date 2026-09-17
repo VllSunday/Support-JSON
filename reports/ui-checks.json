@@ -1,0 +1,20 @@
+{
+  "method":"Actual browser interactions with the local HTTP server and exported LoRA; read-only DOM geometry and screenshots",
+  "checks": {
+    "real_model_reply_shown":true,
+    "category_priority_sentiment_action_escalation_reply_and_rules_shown":true,
+    "changing_message_clears_old_result_and_facts":true,
+    "changing_message_clears_history":true,
+    "inflight_response_discarded_after_input_change":true,
+    "client_invalid_policy_json_shows_error":true,
+    "fixture_selection_restores_context":true,
+    "desktop_two_columns_no_horizontal_overflow":true,
+    "mobile_panels_stack_no_horizontal_overflow":true,
+    "temporary_viewport_override_reset":true
+  },
+  "tested_css_widths":[985,390],
+  "default_css_width_after_reset":1280,
+  "screenshots":["reports/demo-screenshot.png","reports/demo-result-screenshot.png"],
+  "screenshot_note":"Actual retained incorrect refund denial. The result fragment is a browser screenshot crop, not a simulated model result.",
+  "limitations":"UI success is not model correctness. One locator wait expired before a generation completed; the subsequent actual visible state confirmed that the stale response was discarded. Semantic failures are recorded separately in demo-checks.json and demo-behavior-review.json."
+}

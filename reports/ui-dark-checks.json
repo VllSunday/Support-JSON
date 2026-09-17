@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-18",
+  "purpose": "Verify the user-supplied Open Design layout connected to the existing real model API",
+  "training_or_benchmark_changed": false,
+  "reference_mock_javascript_used": false,
+  "checks": {
+    "html_app_and_seven_fonts_return_http_200": true,
+    "unlisted_static_path_returns_404": true,
+    "javascript_syntax_node_check": true,
+    "python_backend_compiles": true,
+    "desktop_1280_css_pixels_two_columns_no_horizontal_overflow": true,
+    "mobile_390_css_pixels_one_column_no_horizontal_overflow": true,
+    "real_model_output_rendered": true,
+    "pretty_json_observed_14_lines": true,
+    "copy_json_success_feedback_observed": true,
+    "copy_reply_success_feedback_observed": true,
+    "message_edit_clears_previous_facts_and_history": true,
+    "message_edit_hides_result_and_disables_copy": true,
+    "late_real_response_discarded_after_message_edit": true,
+    "malformed_policy_json_shows_field_and_result_error_before_request": true,
+    "facts_editor_updates_preview_with_unknown_null_and_origins": true,
+    "history_editor_updates_two_message_preview": true,
+    "example_change_restores_its_context": true,
+    "real_contract_failure_hides_draft_and_exposes_raw_response": true
+  },
+  "actual_cases": [
+    {
+      "name": "validation refund true, positive tone",
+      "response_seconds_including_lazy_load": 24.73,
+      "contract_valid": true,
+      "action": "answer",
+      "reply": "По переданным правилам условия этого возврата не выполнены. Предложить запрошенную операцию на этом основании нельзя.",
+      "semantic_note": "Known false denial at the inclusive ten-day boundary. Preserved, not repaired by UI."
+    },
+    {
+      "name": "validation access true, edited during inference",
+      "result_discarded": true,
+      "visible_status": "Данные изменились. Ответ предыдущего запроса скрыт; выполните новый разбор."
+    },
+    {
+      "name": "validation refund unknown, positive tone",
+      "response_seconds": 11.33,
+      "contract_valid": true,
+      "action": "answer",
+      "semantic_note": "Model incorrectly treats an unknown payment method as failure. Schema alone cannot detect this."
+    },
+    {
+      "name": "previously recorded missing_payment_method context, neutral tone",
+      "contract_valid": false,
+      "actual_action": "answer",
+      "actual_missing_info": ["payment_method"],
+      "visible_error": "Ответ не прошёл проверку",
+      "draft_hidden": true,
+      "raw_response_toggle_verified": true
+    },
+    {
+      "name": "validation access true, positive tone",
+      "response_seconds": 11.11,
+      "contract_valid": true,
+      "category": "access",
+      "priority": "high",
+      "action": "propose_action",
+      "recommended_action": "propose_password_reset",
+      "reply": "По правилам можно предложить сброс пароля. Пароль пока не изменён."
+    }
+  ],
+  "method": "Actual local HTTP serving and interactions through Codex computer-use browser, including real CUDA model calls. No mocked responses or hidden browser state injection.",
+  "note": "Functional UI checks are not a new quality benchmark. These validation-derived contexts are already known. Current model and original primary test remain frozen. Desktop and mobile screenshots are browser observations, not pixel-perfect export certificates."
+}

@@ -1,0 +1,21 @@
+{
+  "method": "AI-assisted manual reading of all 10 actual HTTP model replies against their submitted contexts",
+  "independent_human_review": false,
+  "scope": "Validation-derived and edited inputs; separate from the frozen 108-row benchmark and its 36-pair response audit",
+  "model_replies": 10,
+  "expected_fields_and_contract_matches": 8,
+  "unsupported_fact_or_policy_claims": 3,
+  "checks": [
+    {"name":"refund_allowed","response_quality":1,"hallucination":true,"note":"Card and exactly 10 days satisfy the inclusive rule, but the model incorrectly states that the return conditions are not met."},
+    {"name":"same_request_changed_rule","response_quality":4,"hallucination":false,"note":"With the threshold reduced to 9 days, denial is correct. However the paired original request was also denied: this pair does not demonstrate successful adaptation to the changed threshold."},
+    {"name":"missing_payment_method","response_quality":3,"hallucination":false,"note":"The reply identifies the genuinely missing payment method instead of inventing it, but is awkward and gives no clear question. The JSON uses answer with nonempty missing_info, violating the contract."},
+    {"name":"conflicting_rules","response_quality":4,"hallucination":false,"note":"Correctly identifies conflicting rules and asks for specialist review without claiming a completed handoff."},
+    {"name":"critical_system_incident","response_quality":4,"hallucination":false,"note":"Correct critical escalation from a confirmed service interruption; reply is generic but grounded."},
+    {"name":"exception_not_authorized","response_quality":3,"hallucination":true,"note":"Correctly refuses the unauthorized exception for transfer payment. Its wording 'не прошло 10 дней' changes an inclusive within-10-day policy into a stricter temporal condition. Policy boundary restatement is therefore flagged; this does not change the correct denial in this particular transfer case."},
+    {"name":"customer_facts_available_in_history","response_quality":3,"hallucination":true,"note":"Correctly uses customer facts in history without asking again. However 'Оплата не возвращена в системе' asserts an external refund status absent from the context. suggest_only proves this prototype did not perform a refund; it does not prove the company's payment system status."},
+    {"name":"angry_customer_low_priority","response_quality":4,"hallucination":false,"note":"Correctly separates negative sentiment from low priority and suggests the policy-provided invoice download location."},
+    {"name":"customer_claim_is_not_system_confirmation","response_quality":4,"hallucination":false,"note":"Does not treat the customer's assertion as system confirmation; specialist review is appropriate when the system fact is unknown."},
+    {"name":"proposed_refund_is_not_completed","response_quality":5,"hallucination":false,"note":"Correctly proposes a refund request and explicitly states that the operation has not been executed. No claim of an already completed refund."}
+  ],
+  "conclusion":"Working operator prototype with retained model errors. No arbitrary-policy reliability, zero hallucinations, or production autonomy established. No prompt or weight change was made from these checks."
+}

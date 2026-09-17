@@ -1,0 +1,12 @@
+{"check": "refund_allowed", "expected_fields_match": false, "http_status": 200}
+{"check": "same_request_changed_rule", "expected_fields_match": true, "http_status": 200}
+{"check": "missing_payment_method", "expected_fields_match": false, "http_status": 200}
+{"check": "conflicting_rules", "expected_fields_match": true, "http_status": 200}
+{"check": "critical_system_incident", "expected_fields_match": true, "http_status": 200}
+{"check": "exception_not_authorized", "expected_fields_match": true, "http_status": 200}
+{"check": "customer_facts_available_in_history", "expected_fields_match": true, "http_status": 200}
+{"check": "angry_customer_low_priority", "expected_fields_match": true, "http_status": 200}
+{"check": "customer_claim_is_not_system_confirmation", "expected_fields_match": true, "http_status": 200}
+{"check": "proposed_refund_is_not_completed", "expected_fields_match": true, "http_status": 200}
+{"check": "malformed_fact_rejected", "expected_fields_match": true, "http_status": 400}
+{"check": "customer_history_cannot_claim_system_role", "expected_fields_match": true, "http_status": 400}

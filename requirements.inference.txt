@@ -1,0 +1,8 @@
+# Install CUDA PyTorch separately; see README for the tested Windows GPU setup.
+transformers==5.17.0
+peft==0.21.0
+accelerate==1.15.0
+huggingface_hub==1.32.0
+jsonschema>=4.23,<5
+httpx>=0.28,<1
+safetensors>=0.7,<1
